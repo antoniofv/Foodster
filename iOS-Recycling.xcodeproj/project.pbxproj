@@ -14,6 +14,10 @@
 		E2E7E1CB299FBFF300A5C883 /* iOS_RecyclingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1CA299FBFF300A5C883 /* iOS_RecyclingTests.swift */; };
 		E2E7E1D5299FBFF300A5C883 /* iOS_RecyclingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1D4299FBFF300A5C883 /* iOS_RecyclingUITests.swift */; };
 		E2E7E1D7299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1D6299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift */; };
+		E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1E9299FC0D700A5C883 /* Post.swift */; };
+		E2E7E1EC299FC14800A5C883 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1EB299FC14800A5C883 /* PostViewModel.swift */; };
+		E2E7E1F0299FC72300A5C883 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1EF299FC72300A5C883 /* RequestManager.swift */; };
+		E2E7E1F2299FC74700A5C883 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1F1299FC74700A5C883 /* PostAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		E2E7E1D0299FBFF300A5C883 /* iOS-RecyclingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-RecyclingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7E1D4299FBFF300A5C883 /* iOS_RecyclingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingUITests.swift; sourceTree = "<group>"; };
 		E2E7E1D6299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E2E7E1E9299FC0D700A5C883 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E2E7E1EB299FC14800A5C883 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		E2E7E1EF299FC72300A5C883 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		E2E7E1F1299FC74700A5C883 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,12 @@
 		E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */ = {
 			isa = PBXGroup;
 			children = (
-				E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */,
-				E2E7E1BB299FBFF200A5C883 /* ContentView.swift */,
+				E2E7E1EE299FC6F800A5C883 /* Tools */,
+				E2E7E1ED299FC6E300A5C883 /* API */,
+				E2E7E1E8299FC0A000A5C883 /* Controllers */,
+				E2E7E1E6299FC05100A5C883 /* ViewModels */,
+				E2E7E1E5299FC04400A5C883 /* Views */,
+				E2E7E1E3299FC02C00A5C883 /* Models */,
 				E2E7E1BD299FBFF300A5C883 /* Assets.xcassets */,
 				E2E7E1BF299FBFF300A5C883 /* Preview Content */,
 			);
@@ -125,6 +137,54 @@
 				E2E7E1D6299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift */,
 			);
 			path = "iOS-RecyclingUITests";
+			sourceTree = "<group>";
+		};
+		E2E7E1E3299FC02C00A5C883 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7E1E9299FC0D700A5C883 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E2E7E1E5299FC04400A5C883 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7E1BB299FBFF200A5C883 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2E7E1E6299FC05100A5C883 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7E1EB299FC14800A5C883 /* PostViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E2E7E1E8299FC0A000A5C883 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E2E7E1ED299FC6E300A5C883 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7E1F1299FC74700A5C883 /* PostAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E2E7E1EE299FC6F800A5C883 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E2E7E1EF299FC72300A5C883 /* RequestManager.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E7E1F0299FC72300A5C883 /* RequestManager.swift in Sources */,
 				E2E7E1BC299FBFF200A5C883 /* ContentView.swift in Sources */,
+				E2E7E1F2299FC74700A5C883 /* PostAPI.swift in Sources */,
 				E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */,
+				E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */,
+				E2E7E1EC299FC14800A5C883 /* PostViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
