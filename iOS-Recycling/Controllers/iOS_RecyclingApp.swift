@@ -11,7 +11,7 @@ import SwiftUI
 struct iOS_RecyclingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(posts: [])
+            ContentView()
         }
     }
 }

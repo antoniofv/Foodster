@@ -14,5 +14,6 @@ This project will also explore the modern iOS architecture patterns beyond the t
 
 ### Technologies and Frameworks
 
+    * Combine
     * Swift 5
     * SwiftUI

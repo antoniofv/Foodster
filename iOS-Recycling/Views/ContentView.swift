@@ -8,31 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var posts: [Post] = [];
-    private let postViewModel = PostViewModel()
+    @StateObject private var postViewModel = PostViewModel()
     
     var body: some View {
         NavigationView {
-            List(posts) { post in
-                NavigationLink(destination: Text(post.title)) {
+            List(postViewModel.posts) { post in
+                NavigationLink(destination: PostDetailView(post: post)) {
                     VStack(alignment: .leading) {
                         Text(post.title).font(.title2).bold()
-                        Text(post.body)
+                        Text(post.body).lineLimit(3)
                     }
                 }
             }
             .listStyle(.plain)
             .navigationBarTitle(Text("Posts"))
-        }.onAppear(perform: {
-            postViewModel.getPosts { posts in
-                self.posts = posts
-            }
-        })
+        }.onAppear {
+            self.postViewModel.getPosts()
+        }
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+#endif

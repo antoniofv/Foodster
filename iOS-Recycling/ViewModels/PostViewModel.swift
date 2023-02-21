@@ -7,12 +7,20 @@
 
 import Foundation
 
-class PostViewModel {
+@MainActor
+final class PostViewModel: ObservableObject {
     
     let postApi = PostAPI()
     
-    func getPosts(completion: @escaping ([Post]) -> ()) {
-        postApi.getPosts(completion: completion)
+    @Published
+    var posts: [Post] = []
+    
+    func getPosts() {
+        postApi.getPosts { posts in
+            DispatchQueue.main.async{
+                self.posts = posts
+            }
+        }
     }
     
 }
