@@ -22,6 +22,8 @@ struct ContentView: View {
             }
             .listStyle(.plain)
             .navigationBarTitle(Text("Posts"))
+            .toolbarBackground(Color.orange, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
         }.onAppear {
             self.postViewModel.getPosts()
         }
