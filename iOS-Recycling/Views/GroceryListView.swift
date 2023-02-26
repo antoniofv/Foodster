@@ -46,6 +46,9 @@ struct GroceryListView: View {
                 .onDelete { indexSet in
                     groceryListViewModel.removeItem(atOffsets: indexSet)
                 }
+                .onMove { from, to in
+                    groceryListViewModel.moveItem(fromOffsets: from, toOffset: to)
+                }
             }
             .listStyle(.plain)
             .listRowSeparator(.visible)

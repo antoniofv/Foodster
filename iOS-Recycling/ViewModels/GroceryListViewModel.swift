@@ -26,4 +26,8 @@ final class GroceryListViewModel: ObservableObject {
         groceries.remove(atOffsets: indexSet)
     }
     
+    func moveItem(fromOffsets from: IndexSet, toOffset to: Int) {
+        groceries.move(fromOffsets: from, toOffset: to)
+    }
+
 }

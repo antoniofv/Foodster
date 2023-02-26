@@ -26,9 +26,11 @@ struct GroceryListCell: View {
     }
 }
 
+#if DEBUG
 struct GroceryListCell_Previews: PreviewProvider {
     @State private static var item = GroceryListItem(id: "1", name: "", quantity: 1)
     static var previews: some View {
         GroceryListCell(groceryListItem: $item)
     }
 }
+#endif

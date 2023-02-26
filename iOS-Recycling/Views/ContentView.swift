@@ -13,10 +13,10 @@ struct ContentView: View {
     var body: some View {
         TabView {
             GroceryListView().tabItem {
-                Label("Groceries", systemImage: "tray.and.arrow.down.fill")
+                Label("Groceries", systemImage: "cart")
             }
             PostListView().tabItem {
-                Label("Posts", systemImage: "tray.and.arrow.down.fill")
+                Label("Posts", systemImage: "newspaper")
             }
         }
     }
