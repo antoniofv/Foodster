@@ -11,6 +11,7 @@
 		E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFA29A83DC800511180 /* GroceryListView.swift */; };
 		E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */; };
 		E2155AFF29A83F0F00511180 /* GroceryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFE29A83F0F00511180 /* GroceryListItem.swift */; };
+		E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EDF129AA923500C3696D /* GroceryListCell.swift */; };
 		E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */; };
 		E2E7E1BC299FBFF200A5C883 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1BB299FBFF200A5C883 /* ContentView.swift */; };
 		E2E7E1BE299FBFF300A5C883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E7E1BD299FBFF300A5C883 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		E2155AFA29A83DC800511180 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
 		E2155AFE29A83F0F00511180 /* GroceryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItem.swift; sourceTree = "<group>"; };
+		E2D0EDF129AA923500C3696D /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
 		E2E7E1B6299FBFF200A5C883 /* iOS-Recycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Recycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingApp.swift; sourceTree = "<group>"; };
 		E2E7E1BB299FBFF200A5C883 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				E2E7E1F429A133F200A5C883 /* PostDetailView.swift */,
 				E2155AF829A7A5A900511180 /* PostListView.swift */,
 				E2155AFA29A83DC800511180 /* GroceryListView.swift */,
+				E2D0EDF129AA923500C3696D /* GroceryListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				E2E7E1F529A133F200A5C883 /* PostDetailView.swift in Sources */,
 				E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */,
 				E2E7E1EC299FC14800A5C883 /* PostViewModel.swift in Sources */,
+				E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

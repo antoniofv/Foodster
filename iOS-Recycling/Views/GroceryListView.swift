@@ -7,24 +7,48 @@
 
 import SwiftUI
 
+struct GroceryListViewData: Hashable {
+    static func == (lhs: GroceryListViewData, rhs: GroceryListViewData) -> Bool {
+        lhs.groceryListItem.wrappedValue == rhs.groceryListItem.wrappedValue
+        && lhs.isChecked == rhs.isChecked
+        && lhs.isEditing == rhs.isEditing
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.groceryListItem.wrappedValue)
+        hasher.combine(self.isChecked)
+        hasher.combine(self.isEditing)
+    }
+    
+    var groceryListItem: Binding<GroceryListItem>
+    var isChecked: Bool = false
+    var isEditing: Bool = false
+}
+
 struct GroceryListView: View {
     
     @StateObject private var groceryListViewModel = GroceryListViewModel()
+    @FocusState private var focusedIndex: Int?
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(groceryListViewModel.groceries) { grocery in
-                    HStack(alignment: .center) {
-                        Text(grocery.name).font(.title2).bold()
-                        Spacer()
-                        Text("\(grocery.quantity)")
+            List() {
+                ForEach(groceryListViewModel.groceries.indices, id: \.self) { index in
+                    GroceryListCell(
+                        groceryListItem: $groceryListViewModel.groceries[index],
+                        isEditing: (focusedIndex ?? -1) == index
+                    )
+                    .focused($focusedIndex, equals: index)
+                    .onSubmit {
+                        focusedIndex = nil
                     }
-                }.onDelete { indexSet in
+                }
+                .onDelete { indexSet in
                     groceryListViewModel.removeItem(atOffsets: indexSet)
                 }
             }
             .listStyle(.plain)
+            .listRowSeparator(.visible)
             .navigationBarTitle(Text("Groceries"))
             .toolbarBackground(Color.green, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -39,7 +63,14 @@ struct GroceryListView: View {
     }
     
     private func addItem() {
-        groceryListViewModel.addItem(GroceryListItem(id: "\(groceryListViewModel.groceries.count)", name: "Item \(groceryListViewModel.groceries.count)", quantity: 1))
+        groceryListViewModel.addItem(
+            GroceryListItem(
+                id: "\(groceryListViewModel.groceries.count)",
+                name: "",
+                quantity: 1
+            )
+        )
+        focusedIndex = groceryListViewModel.groceries.count - 1
     }
 }
 

@@ -9,6 +9,6 @@ import Foundation
 
 struct GroceryListItem: Identifiable, Hashable {
     var id: String
-    let name: String
+    var name: String
     var quantity: Int
 }
