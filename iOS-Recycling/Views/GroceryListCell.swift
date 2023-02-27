@@ -15,14 +15,16 @@ struct GroceryListCell: View {
     
     var body: some View {
         HStack(alignment: .center) {
+            Button(action: {
+                isChecked = !isChecked
+            }) {
+                Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
+            }.foregroundColor(isChecked ? .gray : nil)
             TextField("", text: $groceryListItem.name)
                 .font(.body)
                 .bold()
-                .background(isEditing ? .orange : .clear)
-            Text("\(groceryListItem.quantity)")
-                .multilineTextAlignment(.trailing)
-        }
-        .padding(EdgeInsets(top: 3, leading: 12, bottom: 3, trailing: 12))
+                .foregroundColor(isChecked ? .gray : nil)
+        }.listRowBackground(isChecked ? Color.clear : Color.white)
     }
 }
 

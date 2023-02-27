@@ -31,23 +31,25 @@ struct GroceryListView: View {
     @FocusState private var focusedIndex: Int?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List() {
-                ForEach(groceryListViewModel.groceries.indices, id: \.self) { index in
-                    GroceryListCell(
-                        groceryListItem: $groceryListViewModel.groceries[index],
-                        isEditing: (focusedIndex ?? -1) == index
-                    )
-                    .focused($focusedIndex, equals: index)
-                    .onSubmit {
-                        focusedIndex = nil
+                Section {
+                    ForEach(groceryListViewModel.groceries.indices, id: \.self) { index in
+                        GroceryListCell(
+                            groceryListItem: $groceryListViewModel.groceries[index],
+                            isEditing: (focusedIndex ?? -1) == index
+                        )
+                        .focused($focusedIndex, equals: index)
+                        .onSubmit {
+                            focusedIndex = nil
+                        }
                     }
-                }
-                .onDelete { indexSet in
-                    groceryListViewModel.removeItem(atOffsets: indexSet)
-                }
-                .onMove { from, to in
-                    groceryListViewModel.moveItem(fromOffsets: from, toOffset: to)
+                    .onDelete { indexSet in
+                        groceryListViewModel.removeItem(atOffsets: indexSet)
+                    }
+                    .onMove { from, to in
+                        groceryListViewModel.moveItem(fromOffsets: from, toOffset: to)
+                    }
                 }
             }
             .listStyle(.plain)
@@ -55,11 +57,19 @@ struct GroceryListView: View {
             .navigationBarTitle(Text("Groceries"))
             .toolbarBackground(Color.green, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .background(.gray.opacity(0.15))
+            .scrollContentBackground(.hidden)
             .toolbar {
                 ToolbarItem {
-                    Button("Add", action: addItem)
-                        .foregroundColor(.white)
-                        .bold()
+                    Button(action: {
+                        withAnimation {
+                            addItem()
+                        }
+                    }) {
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                    }
                 }
             }
         }
