@@ -8,7 +8,6 @@
 import Foundation
 
 struct GroceryListItem: Identifiable, Hashable {
-    var id: String
+    let id: UUID = UUID()
     var name: String
-    var quantity: Int
 }

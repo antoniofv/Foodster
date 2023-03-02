@@ -19,10 +19,9 @@ struct GroceryListCell: View {
                 isChecked = !isChecked
             }) {
                 Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
-            }.foregroundColor(isChecked ? .gray : nil)
+            }.foregroundColor(isChecked ? .gray : .green)
             TextField("", text: $groceryListItem.name)
                 .font(.body)
-                .bold()
                 .foregroundColor(isChecked ? .gray : nil)
         }.listRowBackground(isChecked ? Color.clear : Color.white)
     }
@@ -30,7 +29,7 @@ struct GroceryListCell: View {
 
 #if DEBUG
 struct GroceryListCell_Previews: PreviewProvider {
-    @State private static var item = GroceryListItem(id: "1", name: "", quantity: 1)
+    @State private static var item = GroceryListItem(name: "")
     static var previews: some View {
         GroceryListCell(groceryListItem: $item)
     }

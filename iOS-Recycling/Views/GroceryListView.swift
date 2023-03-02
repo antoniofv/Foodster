@@ -28,20 +28,20 @@ struct GroceryListViewData: Hashable {
 struct GroceryListView: View {
     
     @StateObject private var groceryListViewModel = GroceryListViewModel()
-    @FocusState private var focusedIndex: Int?
+    @FocusState private var focusedItem: UUID?
     
     var body: some View {
         NavigationStack {
             List() {
                 Section {
-                    ForEach(groceryListViewModel.groceries.indices, id: \.self) { index in
+                    ForEach($groceryListViewModel.groceries, id: \.id) {
                         GroceryListCell(
-                            groceryListItem: $groceryListViewModel.groceries[index],
-                            isEditing: (focusedIndex ?? -1) == index
+                            groceryListItem: $0,
+                            isEditing: focusedItem == $0.id
                         )
-                        .focused($focusedIndex, equals: index)
+                        .focused($focusedItem, equals: $0.id)
                         .onSubmit {
-                            focusedIndex = nil
+                            focusedItem = nil
                         }
                     }
                     .onDelete { indexSet in
@@ -76,14 +76,9 @@ struct GroceryListView: View {
     }
     
     private func addItem() {
-        groceryListViewModel.addItem(
-            GroceryListItem(
-                id: "\(groceryListViewModel.groceries.count)",
-                name: "",
-                quantity: 1
-            )
-        )
-        focusedIndex = groceryListViewModel.groceries.count - 1
+        let newItem = GroceryListItem(name: "")
+        groceryListViewModel.addItem(newItem)
+        focusedItem = newItem.id
     }
 }
 
