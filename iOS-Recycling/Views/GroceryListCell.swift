@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct GroceryListCell: View {
+    
     @Binding var groceryListItem: GroceryListItem
     
-    @State var isChecked: Bool = false
-    @State var isEditing: Bool = false
+    var isEditing: Bool = false
     
     var body: some View {
+        let isChecked = groceryListItem.isChecked
         HStack(alignment: .center) {
             Button(action: {
-                isChecked = !isChecked
+                groceryListItem.isChecked.toggle()
             }) {
                 Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
-            }.foregroundColor(isChecked ? .gray : .green)
+            }
+            .foregroundColor(isChecked ? .gray : .green)
+            
             TextField("", text: $groceryListItem.name)
                 .font(.body)
                 .foregroundColor(isChecked ? .gray : nil)
-        }.listRowBackground(isChecked ? Color.clear : Color.white)
+        }
+        .listRowBackground(isChecked ? Color.clear : Color.white)
     }
 }
 

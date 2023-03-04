@@ -10,4 +10,5 @@ import Foundation
 struct GroceryListItem: Identifiable, Hashable {
     let id: UUID = UUID()
     var name: String
+    var isChecked: Bool = false
 }

@@ -7,24 +7,6 @@
 
 import SwiftUI
 
-struct GroceryListViewData: Hashable {
-    static func == (lhs: GroceryListViewData, rhs: GroceryListViewData) -> Bool {
-        lhs.groceryListItem.wrappedValue == rhs.groceryListItem.wrappedValue
-        && lhs.isChecked == rhs.isChecked
-        && lhs.isEditing == rhs.isEditing
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(self.groceryListItem.wrappedValue)
-        hasher.combine(self.isChecked)
-        hasher.combine(self.isEditing)
-    }
-    
-    var groceryListItem: Binding<GroceryListItem>
-    var isChecked: Bool = false
-    var isEditing: Bool = false
-}
-
 struct GroceryListView: View {
     
     @StateObject private var groceryListViewModel = GroceryListViewModel()
@@ -43,6 +25,7 @@ struct GroceryListView: View {
                         .onSubmit {
                             focusedItem = nil
                         }
+                        
                     }
                     .onDelete { indexSet in
                         groceryListViewModel.removeItem(atOffsets: indexSet)
@@ -72,6 +55,14 @@ struct GroceryListView: View {
                     }
                 }
             }
+            .overlay(Group {
+                // Empty list view
+                if groceryListViewModel.groceries.isEmpty {
+                    Text("Add some items to the list!")
+                        .font(.title2)
+                        .foregroundColor(Color(white: 0.4))
+                }
+            })
         }
     }
     
