@@ -13,6 +13,8 @@ struct GroceryListCell: View {
     
     var isEditing: Bool = false
     
+    private let hPadding = 16.0
+
     var body: some View {
         let isChecked = groceryListItem.isChecked
         HStack(alignment: .center) {
@@ -28,7 +30,9 @@ struct GroceryListCell: View {
                 .foregroundColor(isChecked ? .gray : nil)
         }
         .listRowBackground(isChecked ? Color.clear : Color.white)
+        .padding(EdgeInsets(top: 0, leading: hPadding, bottom: 0, trailing: hPadding))
     }
+
 }
 
 #if DEBUG

@@ -25,7 +25,6 @@ struct GroceryListView: View {
                         .onSubmit {
                             focusedItem = nil
                         }
-                        
                     }
                     .onDelete { indexSet in
                         groceryListViewModel.removeItem(atOffsets: indexSet)
@@ -33,6 +32,8 @@ struct GroceryListView: View {
                     .onMove { from, to in
                         groceryListViewModel.moveItem(fromOffsets: from, toOffset: to)
                     }
+                    .listRowInsets(EdgeInsets())
+                    .alignmentGuide(.listRowSeparatorLeading) { $0[.leading] }
                 }
             }
             .listStyle(.plain)
