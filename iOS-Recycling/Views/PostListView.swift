@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PostListView: View {
+
     @StateObject private var postViewModel = PostViewModel()
-    
+
     var body: some View {
         NavigationView {
             List(postViewModel.posts) { post in
@@ -24,16 +25,29 @@ struct PostListView: View {
             .navigationBarTitle(Text("Posts"))
             .toolbarBackground(Color.orange, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-        }.onAppear {
-            self.postViewModel.getPosts()
+        }
+        .accentColor(.white)
+        .onAppear {
+            loadViewContent()
         }
     }
+
+    private func loadViewContent() {
+        Task(priority: .medium) {
+            do {
+                try await self.postViewModel.getPosts()
+            } catch {
+                print(error)
+            }
+        }
+    }
+
 }
 
 #if DEBUG
 struct PostListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PostListView()
     }
 }
 #endif

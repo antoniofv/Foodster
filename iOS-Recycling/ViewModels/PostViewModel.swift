@@ -15,12 +15,9 @@ final class PostViewModel: ObservableObject {
     @Published
     var posts: [Post] = []
     
-    func getPosts() {
-        postApi.getPosts { posts in
-            DispatchQueue.main.async{
-                self.posts = posts
-            }
-        }
+    func getPosts() async throws {
+        let posts = try await postApi.getPosts()
+        self.posts = posts
     }
     
 }

@@ -11,10 +11,8 @@ class PostAPI: NSObject {
     
     let apiUrl = URL(string: "https://jsonplaceholder.typicode.com/posts")!
     
-    func getPosts(completion: @escaping ([Post]) -> ()) {
-        RequestManager.getRequest(url: apiUrl) { (posts) in
-            completion(posts)
-        }
+    func getPosts() async throws -> [Post] {
+        return try await RequestManager.getRequest(url: apiUrl)
     }
     
 }
