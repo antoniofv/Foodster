@@ -7,20 +7,15 @@
 
 import Foundation
 
-
 class RequestManager: NSObject {
     
-    static func getRequest<T: Decodable>(url: URL, completion: @escaping ([T]) -> ()) {
+    static func getRequest<T: Decodable>(url: URL) async throws -> [T] {
+        let (data, _) = try await URLSession.shared.data(from: url)
         
-        URLSession.shared.dataTask(with: url) { (data, urlResponse, error) in
-            if let data = data {
-                let jsonDecoder = JSONDecoder()
-                
-                let outputData = try! jsonDecoder.decode([T].self, from: data)
-                completion(outputData)
-            }
-        }.resume()
-        
+        let jsonDecoder = JSONDecoder()
+        let outputData = try jsonDecoder.decode([T].self, from: data)
+
+        return outputData
     }
-    
+
 }

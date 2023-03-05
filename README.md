@@ -14,6 +14,7 @@ This project will also explore the modern iOS architecture patterns beyond the t
 
 ### Technologies and Frameworks
 
+    * Async/await
     * Combine
     * Swift 5
     * SwiftUI
