@@ -19,9 +19,10 @@ struct GroceryListView: View {
                     ForEach($groceryListViewModel.groceries, id: \.id) {
                         GroceryListCell(
                             groceryListItem: $0,
+                            focusState: $focusedItem,
                             isEditing: focusedItem == $0.id
                         )
-                        .focused($focusedItem, equals: $0.id)
+//                        .focused($focusedItem, equals: $0.id)
                         .onSubmit {
                             focusedItem = nil
                         }
@@ -54,12 +55,15 @@ struct GroceryListView: View {
                         Image(systemName: "plus")
                             .foregroundColor(.white)
                     }
+                    .accessibilityIdentifier("addButton")
+                    .accessibilityHint(Text("Add a grocery item to the list"))
                 }
             }
             .overlay(Group {
                 // Empty list view
                 if groceryListViewModel.groceries.isEmpty {
                     Text("Add some items to the list!")
+                        .accessibilityIdentifier("emptyListText")
                         .font(.title2)
                         .foregroundColor(Color(white: 0.4))
                 }
@@ -69,8 +73,8 @@ struct GroceryListView: View {
     
     private func addItem() {
         let newItem = GroceryListItem(name: "")
-        groceryListViewModel.addItem(newItem)
-        focusedItem = newItem.id
+        self.groceryListViewModel.addItem(newItem)
+        self.focusedItem = newItem.id
     }
 }
 

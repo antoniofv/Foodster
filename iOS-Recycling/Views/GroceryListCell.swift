@@ -10,6 +10,7 @@ import SwiftUI
 struct GroceryListCell: View {
     
     @Binding var groceryListItem: GroceryListItem
+    var focusState: FocusState<UUID?>.Binding
     
     var isEditing: Bool = false
     
@@ -28,6 +29,7 @@ struct GroceryListCell: View {
             TextField("", text: $groceryListItem.name)
                 .font(.body)
                 .foregroundColor(isChecked ? .gray : nil)
+                .focused(focusState, equals: groceryListItem.id)
         }
         .listRowBackground(isChecked ? Color.clear : Color.white)
         .padding(EdgeInsets(top: 0, leading: hPadding, bottom: 0, trailing: hPadding))
@@ -38,8 +40,10 @@ struct GroceryListCell: View {
 #if DEBUG
 struct GroceryListCell_Previews: PreviewProvider {
     @State private static var item = GroceryListItem(name: "")
+    @FocusState static var focus: UUID?
+    
     static var previews: some View {
-        GroceryListCell(groceryListItem: $item)
+        GroceryListCell(groceryListItem: $item, focusState: $focus)
     }
 }
 #endif
