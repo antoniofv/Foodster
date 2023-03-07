@@ -15,9 +15,8 @@ final class PostViewModel: ObservableObject {
     @Published
     var posts: [Post] = []
     
-    func getPosts() async throws {
-        let posts = try await postApi.getPosts()
-        self.posts = posts
+    func getRecipeCategories() async throws {
+        self.posts = try await postApi.getPosts()
     }
     
 }

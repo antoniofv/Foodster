@@ -15,8 +15,8 @@ struct ContentView: View {
             GroceryListView().tabItem {
                 Label("Groceries", systemImage: "cart")
             }
-            PostListView().tabItem {
-                Label("Posts", systemImage: "newspaper")
+            RecipeCategoryListView().tabItem {
+                Label("Recipes", systemImage: "fork.knife")
             }
         }
     }

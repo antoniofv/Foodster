@@ -35,7 +35,7 @@ struct PostListView: View {
     private func loadViewContent() {
         Task(priority: .medium) {
             do {
-                try await self.postViewModel.getPosts()
+                try await self.postViewModel.getRecipeCategories()
             } catch {
                 print(error)
             }

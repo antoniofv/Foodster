@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PostAPI: NSObject {
+class PostAPI {
     
     let apiUrl = URL(string: "https://jsonplaceholder.typicode.com/posts")!
     

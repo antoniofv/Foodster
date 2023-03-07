@@ -22,7 +22,6 @@ struct GroceryListView: View {
                             focusState: $focusedItem,
                             isEditing: focusedItem == $0.id
                         )
-//                        .focused($focusedItem, equals: $0.id)
                         .onSubmit {
                             focusedItem = nil
                         }

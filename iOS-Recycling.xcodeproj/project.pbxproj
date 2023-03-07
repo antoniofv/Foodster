@@ -11,6 +11,10 @@
 		E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFA29A83DC800511180 /* GroceryListView.swift */; };
 		E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */; };
 		E2155AFF29A83F0F00511180 /* GroceryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFE29A83F0F00511180 /* GroceryListItem.swift */; };
+		E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */; };
+		E24B650329B6BA340058D84D /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650229B6BA340058D84D /* TheMealDBAPI.swift */; };
+		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
+		E24B650729B6BEC20058D84D /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */; };
 		E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EDF129AA923500C3696D /* GroceryListCell.swift */; };
 		E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */; };
 		E2E7E1BC299FBFF200A5C883 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1BB299FBFF200A5C883 /* ContentView.swift */; };
@@ -48,6 +52,10 @@
 		E2155AFA29A83DC800511180 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
 		E2155AFE29A83F0F00511180 /* GroceryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItem.swift; sourceTree = "<group>"; };
+		E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryListView.swift; sourceTree = "<group>"; };
+		E24B650229B6BA340058D84D /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
+		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
+		E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		E2D0EDF129AA923500C3696D /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
 		E2E7E1B6299FBFF200A5C883 /* iOS-Recycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Recycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingApp.swift; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 			children = (
 				E2E7E1E9299FC0D700A5C883 /* Post.swift */,
 				E2155AFE29A83F0F00511180 /* GroceryListItem.swift */,
+				E24B650429B6BA6D0058D84D /* RecipeCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 				E2155AF829A7A5A900511180 /* PostListView.swift */,
 				E2155AFA29A83DC800511180 /* GroceryListView.swift */,
 				E2D0EDF129AA923500C3696D /* GroceryListCell.swift */,
+				E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +187,7 @@
 			children = (
 				E2E7E1EB299FC14800A5C883 /* PostViewModel.swift */,
 				E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */,
+				E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E7E1F1299FC74700A5C883 /* PostAPI.swift */,
+				E24B650229B6BA340058D84D /* TheMealDBAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -336,8 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E7E1F0299FC72300A5C883 /* RequestManager.swift in Sources */,
+				E24B650329B6BA340058D84D /* TheMealDBAPI.swift in Sources */,
 				E2155AFF29A83F0F00511180 /* GroceryListItem.swift in Sources */,
 				E2E7E1BC299FBFF200A5C883 /* ContentView.swift in Sources */,
+				E24B650729B6BEC20058D84D /* RecipeListViewModel.swift in Sources */,
 				E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */,
 				E2155AF929A7A5A900511180 /* PostListView.swift in Sources */,
 				E2E7E1F2299FC74700A5C883 /* PostAPI.swift in Sources */,
@@ -345,6 +359,8 @@
 				E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */,
 				E2E7E1F529A133F200A5C883 /* PostDetailView.swift in Sources */,
 				E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */,
+				E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */,
+				E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */,
 				E2E7E1EC299FC14800A5C883 /* PostViewModel.swift in Sources */,
 				E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */,
 			);
