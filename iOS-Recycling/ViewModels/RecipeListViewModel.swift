@@ -19,4 +19,9 @@ final class RecipeListViewModel: ObservableObject {
         self.categories = try await api.getCategories()
     }
     
+    func getRecipes(forCategory category: RecipeCategory) async throws {
+        if let categoryIndex = self.categories.firstIndex(where: { $0.id == category.id }) {
+            self.categories[categoryIndex].recipes = try await api.getRecipes(by: category)
+        }
+    }
 }

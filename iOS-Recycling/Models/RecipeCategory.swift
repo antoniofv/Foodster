@@ -7,13 +7,44 @@
 
 import Foundation
 
+
+struct Recipe: Decodable, Identifiable {
+    private let idMeal: String
+    let strMeal: String
+    let strMealThumb: String
+    
+    // Needed by the 'Identifiable' protocol.
+    var id: String {
+        idMeal
+    }
+}
+
 struct RecipeCategory: Decodable, Identifiable {
-    let idCategory: String
+    
+    enum CodingKeys: CodingKey {
+        case idCategory
+        case strCategory
+        case strCategoryThumb
+        case strCategoryDescription
+    }
+    
+    private let idCategory: String
     let strCategory: String
     let strCategoryThumb: String
     let strCategoryDescription: String
     
+    // Needed by the 'Identifiable' protocol.
     var id: String {
         idCategory
+    }
+    
+    var recipes: [Recipe] = []
+    
+    init(idCategory: String, strCategory: String, strCategoryThumb: String, strCategoryDescription: String, recipes: [Recipe] = []) {
+        self.idCategory = idCategory
+        self.strCategory = strCategory
+        self.strCategoryThumb = strCategoryThumb
+        self.strCategoryDescription = strCategoryDescription
+        self.recipes = recipes
     }
 }
