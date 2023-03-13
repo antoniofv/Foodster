@@ -16,6 +16,7 @@
 		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
 		E24B650729B6BEC20058D84D /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */; };
 		E24B650929B73F740058D84D /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650829B73F740058D84D /* RecipeListView.swift */; };
+		E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD669829BA510400845741 /* RecipeDetailsView.swift */; };
 		E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EDF129AA923500C3696D /* GroceryListCell.swift */; };
 		E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */; };
 		E2E7E1BC299FBFF200A5C883 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1BB299FBFF200A5C883 /* ContentView.swift */; };
@@ -58,6 +59,7 @@
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
 		E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		E24B650829B73F740058D84D /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		E2CD669829BA510400845741 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		E2D0EDF129AA923500C3696D /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
 		E2E7E1B6299FBFF200A5C883 /* iOS-Recycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Recycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingApp.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				E2D0EDF129AA923500C3696D /* GroceryListCell.swift */,
 				E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */,
 				E24B650829B73F740058D84D /* RecipeListView.swift */,
+				E2CD669829BA510400845741 /* RecipeDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				E2E7E1F529A133F200A5C883 /* PostDetailView.swift in Sources */,
 				E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */,
 				E24B650929B73F740058D84D /* RecipeListView.swift in Sources */,
+				E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */,
 				E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */,
 				E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */,
 				E2E7E1EC299FC14800A5C883 /* PostViewModel.swift in Sources */,

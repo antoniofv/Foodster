@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RecipeCategoryListView: View {
-    
-    @StateObject private var recipeListViewModel = RecipeListViewModel()
+
+    @StateObject private var recipeListViewModel = RecipeListViewModel(api: TheMealDBAPI())
 
     var body: some View {
         NavigationView {
@@ -24,8 +24,8 @@ struct RecipeCategoryListView: View {
                         .padding(6)
                         .background(.gray.opacity(0.2))
                         .cornerRadius(40)
-                        
-                        
+
+
                         Text(category.strCategory).font(.title3)
                     }
                 }
@@ -51,11 +51,15 @@ struct RecipeCategoryListView: View {
             }
         }
     }
-    
+
 }
+
+#if DEBUG
 
 struct RecipeCategoryListView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeCategoryListView()
     }
 }
+
+#endif
