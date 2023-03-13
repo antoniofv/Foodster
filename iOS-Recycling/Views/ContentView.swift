@@ -15,7 +15,7 @@ struct ContentView: View {
             GroceryListView().tabItem {
                 Label("Groceries", systemImage: "cart")
             }
-            RecipeCategoryListView().tabItem {
+            RecipeCategoryListView(api: TheMealDBAPI()).tabItem {
                 Label("Recipes", systemImage: "fork.knife")
             }
         }

@@ -9,12 +9,20 @@ import SwiftUI
 
 struct RecipeCategoryListView: View {
 
-    @StateObject private var recipeListViewModel = RecipeListViewModel(api: TheMealDBAPI())
+    @StateObject private var recipeListViewModel: RecipeListViewModel
+
+
+    init(api: TheMealDBAPIProtocol) {
+        _recipeListViewModel = StateObject(wrappedValue: {
+            RecipeListViewModel(api: api)
+        }())
+    }
 
     var body: some View {
         NavigationView {
             List(recipeListViewModel.categories.sorted(by: { $0.strCategory < $1.strCategory })) { category in
                 NavigationLink(destination: RecipeListView(recipeCategory: category)) {
+
                     HStack(alignment: .center, spacing: 16) {
                         AsyncImage(url: URL(string: category.strCategoryThumb)) { image in
                             image.image?.resizable()
@@ -25,9 +33,10 @@ struct RecipeCategoryListView: View {
                         .background(.gray.opacity(0.2))
                         .cornerRadius(40)
 
-
-                        Text(category.strCategory).font(.title3)
+                        Text(category.strCategory)
+                            .font(.title3)
                     }
+
                 }
             }
             .listStyle(.plain)
@@ -54,11 +63,12 @@ struct RecipeCategoryListView: View {
 
 }
 
+
 #if DEBUG
 
 struct RecipeCategoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCategoryListView()
+        RecipeCategoryListView(api: MockTheMealDBAPI())
     }
 }
 
