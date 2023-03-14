@@ -2,7 +2,8 @@
 //  ScrollViewWithOffset.swift
 //  iOS-Recycling
 //
-//  Created by Antonio Fernandez Vega on 14/3/23.
+//  This code comes from the following blog post by Federico Zanetello:
+//  https://www.fivestars.blog/articles/scrollview-offset/
 //
 
 import SwiftUI
