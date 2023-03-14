@@ -11,7 +11,9 @@
 		E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFA29A83DC800511180 /* GroceryListView.swift */; };
 		E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */; };
 		E2155AFF29A83F0F00511180 /* GroceryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFE29A83F0F00511180 /* GroceryListItem.swift */; };
+		E2322CE029C0D3240036F3FC /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */; };
 		E23574E229BFE070007AAF93 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23574E129BFE070007AAF93 /* Recipe.swift */; };
+		E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */; };
 		E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */; };
 		E24B650329B6BA340058D84D /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650229B6BA340058D84D /* TheMealDBAPI.swift */; };
 		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
@@ -55,7 +57,9 @@
 		E2155AFA29A83DC800511180 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
 		E2155AFE29A83F0F00511180 /* GroceryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItem.swift; sourceTree = "<group>"; };
+		E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		E23574E129BFE070007AAF93 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
 		E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryListView.swift; sourceTree = "<group>"; };
 		E24B650229B6BA340058D84D /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E23574E329BFF1B2007AAF93 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */,
+				E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		E2E7E1AD299FBFF200A5C883 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 		E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */ = {
 			isa = PBXGroup;
 			children = (
+				E23574E329BFF1B2007AAF93 /* Misc */,
 				E2E7E1EE299FC6F800A5C883 /* Tools */,
 				E2E7E1ED299FC6E300A5C883 /* API */,
 				E2E7E1E8299FC0A000A5C883 /* Controllers */,
@@ -367,6 +381,8 @@
 				E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */,
 				E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */,
 				E2E7E1F529A133F200A5C883 /* PostDetailView.swift in Sources */,
+				E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */,
+				E2322CE029C0D3240036F3FC /* EdgeInsets+Extensions.swift in Sources */,
 				E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */,
 				E24B650929B73F740058D84D /* RecipeListView.swift in Sources */,
 				E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */,

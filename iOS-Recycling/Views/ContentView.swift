@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject private var postViewModel = PostViewModel()
     
     var body: some View {
-        TabView {
+        TabView() {
             GroceryListView().tabItem {
                 Label("Groceries", systemImage: "cart")
             }

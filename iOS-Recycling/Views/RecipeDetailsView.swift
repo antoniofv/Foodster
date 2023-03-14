@@ -14,40 +14,65 @@ struct RecipeDetailsView: View {
 
     let recipeId: String
 
+    let recipeImageHeight: CGFloat = 260
+
     @State private var loadedRecipe: Recipe?
+    @State private var scrollOffset: CGFloat = .zero
 
     var body: some View {
-        ScrollView {
+        ZStack(alignment: .topLeading) {
 
-            VStack(alignment: .leading) {
-
+            GeometryReader { proxy in
                 AsyncImage(url: URL(string: loadedRecipe?.strMealThumb ?? "")) { image in
-                        image.image?
-                            .resizable()
-                            .scaledToFill()
-                    }
-                    .frame(height: 260, alignment: .topLeading)
-                    .clipped()
-                    .backgroundStyle(.yellow)
-
-                VStack(alignment: .leading, spacing: 20) {
-
-                    Text(loadedRecipe?.strMeal ?? "")
-                        .font(.title)
-                        .bold()
-
-                    VStack(alignment: .leading, spacing: 30) {
-                        IngredientListView()
-
-                        InstructionsView()
-                    }
-
+                    image.image?
+                        .resizable()
+                        .scaledToFill()
                 }
-                .padding(20)
+                .blur(
+                    radius: abs(min(scrollOffset, 0)) / recipeImageHeight * 20,
+                    opaque: true
+                )
+                .frame(
+                    width: proxy.size.width,
+                    height: recipeImageHeight + max(0, scrollOffset),
+                    alignment: .top
+                )
+                .clipped()
+                .background(.gray.opacity(0.15))
             }
-            .navigationBarTitle("Recipe", displayMode: .inline)
-            .toolbarBackground(Color.orange, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+
+            ScrollViewWithOffset {
+
+                VStack(alignment: .leading) {
+
+                    VStack(alignment: .leading, spacing: 20) {
+
+                        Text(loadedRecipe?.strMeal ?? "")
+                            .font(.title)
+                            .bold()
+
+                        VStack(alignment: .leading, spacing: 30) {
+                            IngredientListView()
+
+                            InstructionsView()
+                        }
+
+                    }
+                    .padding(EdgeInsets(
+                        top: 20,
+                        leading: 20,
+                        bottom: 400,
+                        trailing: 20
+                    ))
+                    .background(.white)
+                    .cornerRadius(16)
+                }
+                .padding(.zero.insetBy(top: recipeImageHeight - 20, bottom: -380))
+
+            } onOffsetChange: { offset in
+                scrollOffset = offset
+            }.shadow(radius: 20, y: 2)
+
         }
         .overlay {
             if loadedRecipe == nil {
@@ -69,6 +94,9 @@ struct RecipeDetailsView: View {
                 print(error)
             }
         }
+        .navigationBarTitle("Recipe", displayMode: .inline)
+        .toolbarBackground(Color.orange, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
 
     }
 
@@ -84,7 +112,7 @@ struct RecipeDetailsView: View {
                 ForEach(loadedRecipe?.ingredients ?? []) { ingredient in
                     Text(ingredient.description)
                         .font(.callout)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .padding(.zero)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                 }
 
@@ -113,12 +141,12 @@ struct RecipeDetailsView: View {
                 }
                 .buttonStyle(.bordered)
                 .tint(.orange)
-                .padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
+                .padding(.zero.insetBy(top: 5, bottom: 10))
             }
 
             Text(loadedRecipe?.strInstructions ?? "")
                 .font(.callout)
-                .padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 20))
+                .padding(.zero.insetBy(leading: 1, trailing: 20))
 
         }
     }

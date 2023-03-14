@@ -81,7 +81,7 @@ final class MockTheMealDBAPI: TheMealDBAPIProtocol {
             idMeal: "1",
             strMeal: "Bacon cheeseburger",
             strMealThumb: "https://img.freepik.com/premium-photo/craft-beef-burger-with-cheddar-bacon-pickles-purple-onion-sauce-wooden-background_74692-842.jpg",
-            strInstructions: "You do this and then you do that and... that's it!",
+            strInstructions: "First you make the angus meat, then you cook the bacon really crispy.\n\nPut a slice of cheddar over the bread, then the angus meat, another cheddar slice, barbecue sauce and then lots of bacon on top.\n\nAnd... that's it!",
             strYoutube: "https://www.youtube.com/watch?v=ZSrtDFR4yb8",
             ingredients: [
                 RecipeIngredient(name: "Bacon", measure: "200g"),
