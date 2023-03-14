@@ -7,12 +7,12 @@
 
 import Foundation
 
-class PostAPI: NSObject {
-    
+class PostAPI {
+
     let apiUrl = URL(string: "https://jsonplaceholder.typicode.com/posts")!
-    
+
     func getPosts() async throws -> [Post] {
         return try await RequestManager.getRequest(url: apiUrl)
     }
-    
+
 }

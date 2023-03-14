@@ -11,12 +11,12 @@ struct ContentView: View {
     @StateObject private var postViewModel = PostViewModel()
     
     var body: some View {
-        TabView {
+        TabView() {
             GroceryListView().tabItem {
                 Label("Groceries", systemImage: "cart")
             }
-            PostListView().tabItem {
-                Label("Posts", systemImage: "newspaper")
+            RecipeCategoryListView(api: TheMealDBAPI()).tabItem {
+                Label("Recipes", systemImage: "fork.knife")
             }
         }
     }
