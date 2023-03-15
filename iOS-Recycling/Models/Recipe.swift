@@ -23,12 +23,12 @@ struct RecipeIngredient: Identifiable {
 
 struct Recipe: Decodable, Identifiable {
 
-    enum CodingKeys: CodingKey {
-        case idMeal
-        case strMeal
-        case strMealThumb
-        case strInstructions
-        case strYoutube
+    enum CodingKeys: String, CodingKey {
+        case id = "idMeal"
+        case name = "strMeal"
+        case thumbnail = "strMealThumb"
+        case instructions = "strInstructions"
+        case video = "strYoutube"
 
         // Ingredient keys
         case strIngredient1
@@ -99,26 +99,24 @@ struct Recipe: Decodable, Identifiable {
         (.strIngredient20, .strMeasure20),
     ]
 
-    private let idMeal: String
-    let strMeal: String
-    let strMealThumb: String
-    var strInstructions: String?
-    var strYoutube: String?
+
+    let id: String
+    let name: String
+    let thumbnail: String
+    var instructions: String?
+    var video: String?
+
     var ingredients: [RecipeIngredient] = []
 
-    // Needed by the 'Identifiable' protocol.
-    var id: String {
-        idMeal
-    }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Self.CodingKeys)
 
-        self.idMeal = try container.decode(String.self, forKey: .idMeal)
-        self.strMeal = try container.decode(String.self, forKey: .strMeal)
-        self.strMealThumb = try container.decode(String.self, forKey: .strMealThumb)
-        self.strInstructions = try container.decodeIfPresent(String.self, forKey: .strInstructions)
-        self.strYoutube = try container.decodeIfPresent(String.self, forKey: .strYoutube)
+        self.id = try container.decode(String.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.thumbnail = try container.decode(String.self, forKey: .thumbnail)
+        self.instructions = try container.decodeIfPresent(String.self, forKey: .instructions)
+        self.video = try container.decodeIfPresent(String.self, forKey: .video)
 
         self.ingredients = []
 
@@ -139,18 +137,18 @@ struct Recipe: Decodable, Identifiable {
     }
 
     init(
-        idMeal: String,
-        strMeal: String,
-        strMealThumb: String = "",
-        strInstructions: String,
-        strYoutube: String = "",
+        id: String,
+        name: String,
+        thumbnail: String = "",
+        instructions: String,
+        video: String = "",
         ingredients: [RecipeIngredient]
     ) {
-        self.idMeal = idMeal
-        self.strMeal = strMeal
-        self.strMealThumb = strMealThumb
-        self.strInstructions = strInstructions
-        self.strYoutube = strYoutube
+        self.id = id
+        self.name = name
+        self.thumbnail = thumbnail
+        self.instructions = instructions
+        self.video = video
         self.ingredients = ingredients
     }
 

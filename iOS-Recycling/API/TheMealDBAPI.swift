@@ -38,7 +38,7 @@ final class TheMealDBAPI: TheMealDBAPIProtocol {
     func getRecipes(by category: RecipeCategory) async throws -> [Recipe] {
         let recipesDictionary: RecipesDictionary = try await RequestManager.getRequest(
             url: TheMealDBAPI.recipesByCategorysUrl.appending(queryItems: [
-                URLQueryItem(name: "c", value: category.strCategory)
+                URLQueryItem(name: "c", value: category.name)
             ])
         )
         
@@ -64,25 +64,25 @@ final class MockTheMealDBAPI: TheMealDBAPIProtocol {
 
     func getCategories() async throws -> [RecipeCategory] {
         return [
-            RecipeCategory(idCategory: "1", strCategory: "Vegan", strCategoryThumb: "", strCategoryDescription: "Vegan food!"),
-            RecipeCategory(idCategory: "2", strCategory: "Beef", strCategoryThumb: "", strCategoryDescription: "Beafy beef!")
+            RecipeCategory(id: "1", name: "Vegan", thumbnail: "", description: "Vegan food!"),
+            RecipeCategory(id: "2", name: "Beef", thumbnail: "", description: "Beafy beef!")
         ]
     }
 
     func getRecipes(by category: RecipeCategory) async throws -> [Recipe] {
         return [
-            Recipe(idMeal: "1", strMeal: "Meal 1", strInstructions: "Instructions 1", ingredients: []),
-            Recipe(idMeal: "2", strMeal: "Meal 2", strInstructions: "Instructions 2", ingredients: []),
+            Recipe(id: "1", name: "Meal 1", instructions: "Instructions 1", ingredients: []),
+            Recipe(id: "2", name: "Meal 2", instructions: "Instructions 2", ingredients: []),
         ]
     }
 
     func getRecipe(id: String) async throws -> Recipe {
         return Recipe(
-            idMeal: "1",
-            strMeal: "Bacon cheeseburger",
-            strMealThumb: "https://img.freepik.com/premium-photo/craft-beef-burger-with-cheddar-bacon-pickles-purple-onion-sauce-wooden-background_74692-842.jpg",
-            strInstructions: "First you make the angus meat, then you cook the bacon really crispy.\n\nPut a slice of cheddar over the bread, then the angus meat, another cheddar slice, barbecue sauce and then lots of bacon on top.\n\nAnd... that's it!",
-            strYoutube: "https://www.youtube.com/watch?v=ZSrtDFR4yb8",
+            id: "1",
+            name: "Bacon cheeseburger",
+            thumbnail: "https://img.freepik.com/premium-photo/craft-beef-burger-with-cheddar-bacon-pickles-purple-onion-sauce-wooden-background_74692-842.jpg",
+            instructions: "First you make the angus meat, then you cook the bacon really crispy.\n\nPut a slice of cheddar over the bread, then the angus meat, another cheddar slice, barbecue sauce and then lots of bacon on top.\n\nAnd... that's it!",
+            video: "https://www.youtube.com/watch?v=ZSrtDFR4yb8",
             ingredients: [
                 RecipeIngredient(name: "Bacon", measure: "200g"),
                 RecipeIngredient(name: "Cheddar cheese", measure: "100g"),
