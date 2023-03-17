@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct iOS_RecyclingApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, DataStoreProvider.shared.container.viewContext)
         }
     }
+
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class GroceryListViewModel: ObservableObject {
-    
+
     @Published
     var groceries: [GroceryListItem] = []
     

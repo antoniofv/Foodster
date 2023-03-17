@@ -19,6 +19,8 @@
 		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
 		E24B650729B6BEC20058D84D /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */; };
 		E24B650929B73F740058D84D /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650829B73F740058D84D /* RecipeListView.swift */; };
+		E2CA009029C21DC500B01E7B /* DataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */; };
+		E2CA00A429C3575D00B01E7B /* iOS-Recycling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2CA009129C21F7C00B01E7B /* iOS-Recycling.xcdatamodeld */; };
 		E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD669829BA510400845741 /* RecipeDetailsView.swift */; };
 		E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EDF129AA923500C3696D /* GroceryListCell.swift */; };
 		E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */; };
@@ -65,6 +67,8 @@
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
 		E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		E24B650829B73F740058D84D /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreProvider.swift; sourceTree = "<group>"; };
+		E2CA009229C21F7C00B01E7B /* iOS-Recycling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOS-Recycling.xcdatamodel"; sourceTree = "<group>"; };
 		E2CD669829BA510400845741 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		E2D0EDF129AA923500C3696D /* GroceryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListCell.swift; sourceTree = "<group>"; };
 		E2E7E1B6299FBFF200A5C883 /* iOS-Recycling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Recycling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +190,7 @@
 				E2155AFE29A83F0F00511180 /* GroceryListItem.swift */,
 				E24B650429B6BA6D0058D84D /* RecipeCategory.swift */,
 				E23574E129BFE070007AAF93 /* Recipe.swift */,
+				E2CA009129C21F7C00B01E7B /* iOS-Recycling.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E7E1EF299FC72300A5C883 /* RequestManager.swift */,
+				E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -384,12 +390,14 @@
 				E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */,
 				E2322CE029C0D3240036F3FC /* EdgeInsets+Extensions.swift in Sources */,
 				E2E7E1EA299FC0D700A5C883 /* Post.swift in Sources */,
+				E2CA00A429C3575D00B01E7B /* iOS-Recycling.xcdatamodeld in Sources */,
 				E24B650929B73F740058D84D /* RecipeListView.swift in Sources */,
 				E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */,
 				E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */,
 				E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */,
 				E23574E229BFE070007AAF93 /* Recipe.swift in Sources */,
 				E2E7E1EC299FC14800A5C883 /* PostViewModel.swift in Sources */,
+				E2CA009029C21DC500B01E7B /* DataStoreProvider.swift in Sources */,
 				E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,6 +717,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2CA009129C21F7C00B01E7B /* iOS-Recycling.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2CA009229C21F7C00B01E7B /* iOS-Recycling.xcdatamodel */,
+			);
+			currentVersion = E2CA009229C21F7C00B01E7B /* iOS-Recycling.xcdatamodel */;
+			path = "iOS-Recycling.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2E7E1AE299FBFF200A5C883 /* Project object */;
 }
