@@ -5,27 +5,28 @@
 //  Created by Antonio Fernandez Vega on 24/2/23.
 //
 
+import Combine
 import SwiftUI
 
 
 struct GroceryListView: View {
 
-    @Environment(\.managedObjectContext) var dataContext
-
-    @FetchRequest(
-        fetchRequest: GroceryListItem.fetchRequest(),
-        animation: .default
-    )
-    var items: FetchedResults<GroceryListItem>
-
-//    @StateObject private var groceryListViewModel = GroceryListViewModel()
+    @StateObject private var groceryListViewModel: GroceryListViewModel
     @FocusState private var focusedItem: UUID?
-    
+
+    @State var timer: Timer?
+
+
+    init(viewModel: GroceryListViewModel) {
+        _groceryListViewModel = StateObject(wrappedValue: viewModel)
+    }
+
+
     var body: some View {
         NavigationStack {
             List() {
                 Section {
-                    ForEach(items, id: \.id) {
+                    ForEach(groceryListViewModel.groceries, id: \.id) {
                         GroceryListCell(
                             groceryListItem:
                                 $0,
@@ -33,31 +34,40 @@ struct GroceryListView: View {
                             isEditing: focusedItem == $0.id
                         )
                         .onSubmit {
-                            focusedItem = nil
-                            saveContext()
+                            self.focusedItem = nil
+                            self.timer?.invalidate()
+                            self.groceryListViewModel.save()
                         }
-                        .onChange(of: $0) { newValue in
-                            print(newValue)
+                        .onChange(of: $0.isChecked) { _ in
+                            // Remove focus from selected element if a checkbox is tapped.
+                            self.focusedItem = nil
                         }
+                        .onReceive($0.objectWillChange) {
+                            // Wait before committing changes, to prevent unnecessary
+                            // writes to the database if more changes happen in a short time.
+                            self.timer?.invalidate()
+
+                            self.timer = Timer.scheduledTimer(
+                                withTimeInterval: 1,
+                                repeats: false,
+                                block: { timer in
+                                    self.groceryListViewModel.save()
+                                    self.timer = nil
+                                }
+                            )
+                        }
+
                     }
                     .onDelete { indexSet in
-//                        groceryListViewModel.removeItem(atOffsets: indexSet)
-                        let item = self.items[indexSet.first!]
-                            self.dataContext.delete(item)
-                            saveContext()
+                        self.focusedItem = nil
+                        self.groceryListViewModel.removeItem(atOffsets: indexSet)
                     }
                     .onMove { from, to in
-//                        groceryListViewModel.moveItem(fromOffsets: from, toOffset: to)
-
-                        // FIXME: This is the most inefficient way to reorder.
-                        var newArray = Array(items)
-                        newArray.move(fromOffsets: from, toOffset: to)
-
-                        newArray.enumerated().forEach { (index, element) in
-                            element.order = index
-                        }
-
-                        saveContext()
+                        self.focusedItem = nil
+                        self.groceryListViewModel.moveItem(
+                            fromOffsets: from,
+                            toOffset: to
+                        )
                     }
                     .listRowInsets(EdgeInsets())
                     .alignmentGuide(.listRowSeparatorLeading) { $0[.leading] }
@@ -87,8 +97,7 @@ struct GroceryListView: View {
             }
             .overlay(Group {
                 // Empty list view
-//                if groceryListViewModel.groceries.isEmpty {
-                if self.items.isEmpty {
+                if self.groceryListViewModel.groceries.isEmpty {
                     Text("Add some items to the list!")
                         .accessibilityIdentifier("emptyListText")
                         .font(.title2)
@@ -97,32 +106,10 @@ struct GroceryListView: View {
             })
         }
     }
-    
+
     private func addItem() {
-        let newItem = GroceryListItem(
-            context: self.dataContext,
-            name: "",
-            order: self.items.count
-        )
-
-        print(newItem)
-
-//        self.groceryListViewModel.addItem(newItem)
+        let newItem = self.groceryListViewModel.createItem()
         self.focusedItem = newItem.id
-
-        saveContext()
-    }
-
-    private func saveContext() {
-        Task {
-            await self.dataContext.perform {
-                do {
-                    try self.dataContext.save()
-                } catch {
-                    print(error)
-                }
-            }
-        }
     }
 
 }
@@ -133,10 +120,15 @@ struct GroceryListView: View {
 struct GroceryListView_Previews: PreviewProvider {
 
     static var previews: some View {
-        GroceryListView()
+        let dataStoreProvider = DataStoreProvider(inMemory: true)
+        let viewModel = GroceryListViewModel(
+            context: dataStoreProvider.container.viewContext
+        )
+
+        GroceryListView(viewModel: viewModel)
             .environment(
                 \.managedObjectContext,
-                 DataStoreProvider(inMemory: true).container.viewContext
+                 dataStoreProvider.container.viewContext
             )
     }
 
