@@ -10,10 +10,15 @@ import SwiftUI
 @main
 struct iOS_RecyclingApp: App {
 
+    let inMemoryDatabase = CommandLine.arguments.contains("-inMemoryDatabase")
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, DataStoreProvider.shared.container.viewContext)
+                .environment(
+                    \.managedObjectContext,
+                     DataStoreProvider(inMemory: inMemoryDatabase).container.viewContext
+                )
         }
     }
 

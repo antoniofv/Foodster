@@ -25,6 +25,8 @@ This project will also explore the modern iOS architecture patterns beyond the t
 
 The app has 2 main sections: the grocery list and the recipe book. The following screenshots give an approximate idea on how they look.
 
+The recipe book's content is obtained from [TheMealDB API](https://www.themealdb.com/api.php).
+
 ### Grocery list view
 
 <img src="/docs/readme/groceries1.jpg" alt="Grocery list" height="480" />
