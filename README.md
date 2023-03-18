@@ -14,7 +14,26 @@ This project will also explore the modern iOS architecture patterns beyond the t
 
 ### Technologies and Frameworks
 
-    * Async/await
     * Combine
+    * Core Data
     * Swift 5
+    * Swift Concurrency (Async/await)
     * SwiftUI
+
+
+## The app
+
+The app has 2 main sections: the grocery list and the recipe book. The following screenshots give an approximate idea on how they look.
+
+### Grocery list view
+
+<img src="/docs/readme/groceries1.jpg" alt="Grocery list" height="480" />
+
+### Recipe book
+
+<div style="flowDirection: horizontal;">
+    <img src="/docs/readme/recipes1.jpg" alt="Recipe category list" height="480" />
+    <img src="/docs/readme/recipes2.jpg" alt="Recipe list" height="480" />
+    <img src="/docs/readme/recipes3.jpg" alt="Recipe" height="480" />
+</div>
+

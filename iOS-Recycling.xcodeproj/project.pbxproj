@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20FB1E529C4CDEF00AC0B51 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E20FB1E429C4CDEF00AC0B51 /* README.md */; };
 		E2155AF929A7A5A900511180 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AF829A7A5A900511180 /* PostListView.swift */; };
 		E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFA29A83DC800511180 /* GroceryListView.swift */; };
 		E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E20FB1E429C4CDEF00AC0B51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E2155AF829A7A5A900511180 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		E2155AFA29A83DC800511180 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		E2E7E1AD299FBFF200A5C883 = {
 			isa = PBXGroup;
 			children = (
+				E20FB1E429C4CDEF00AC0B51 /* README.md */,
 				E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */,
 				E2E7E1C9299FBFF300A5C883 /* iOS-RecyclingTests */,
 				E2E7E1D3299FBFF300A5C883 /* iOS-RecyclingUITests */,
@@ -350,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20FB1E529C4CDEF00AC0B51 /* README.md in Resources */,
 				E2E7E1C1299FBFF300A5C883 /* Preview Assets.xcassets in Resources */,
 				E2E7E1BE299FBFF300A5C883 /* Assets.xcassets in Resources */,
 			);
