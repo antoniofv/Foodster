@@ -7,25 +7,40 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
-    @StateObject private var postViewModel = PostViewModel()
-    
+
+    @Environment(\.managedObjectContext) var dataContext
+
+
     var body: some View {
         TabView() {
-            GroceryListView().tabItem {
+            GroceryListView(
+                viewModel: GroceryListViewModel(context: dataContext)
+            )
+            .tabItem {
                 Label("Groceries", systemImage: "cart")
             }
-            RecipeCategoryListView(api: TheMealDBAPI()).tabItem {
-                Label("Recipes", systemImage: "fork.knife")
-            }
+
+            RecipeCategoryListView(api: TheMealDBAPI())
+                .tabItem {
+                    Label("Recipes", systemImage: "fork.knife")
+                }
         }
     }
+
 }
 
+
 #if DEBUG
+
 struct ContentView_Previews: PreviewProvider {
+
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, DataStoreProvider(inMemory: true).container.viewContext)
     }
+
 }
+
 #endif

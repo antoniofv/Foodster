@@ -14,24 +14,24 @@ struct RecipeListView: View {
     let recipeCategory: RecipeCategory!
     
     var body: some View {
-        List(recipeCategory.recipes.sorted(by: { $0.strMeal < $1.strMeal })) { recipe in
+        List(recipeCategory.recipes.sorted(by: { $0.name < $1.name })) { recipe in
             NavigationLink(destination: {
                 RecipeDetailsView(recipeId: recipe.id)
             }) {
                 HStack(alignment: .center, spacing: 16) {
-                    AsyncImage(url: URL(string: recipe.strMealThumb)) { image in
+                    AsyncImage(url: URL(string: recipe.thumbnail)) { image in
                         image.image?.resizable()
                     }
                     .scaledToFit()
                     .frame(width: 50, height: 50)
                     .cornerRadius(50)
 
-                    Text(recipe.strMeal).font(.title3)
+                    Text(recipe.name).font(.title3)
                 }
             }
         }
         .listStyle(.plain)
-        .navigationBarTitle(Text(recipeCategory.strCategory))
+        .navigationBarTitle(Text(recipeCategory.name))
         .toolbarBackground(Color.orange, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .onAppear {
@@ -57,10 +57,10 @@ struct RecipeListView_Previews: PreviewProvider {
         let recipeListViewModel = RecipeListViewModel(api: MockTheMealDBAPI())
 
         let recipeCategory = RecipeCategory(
-            idCategory: "1",
-            strCategory: "Pizza",
-            strCategoryThumb: "",
-            strCategoryDescription: "Best food in the World!"
+            id: "1",
+            name: "Pizza",
+            thumbnail: "",
+            description: "Best food in the World!"
         )
 
         recipeListViewModel.categories = [recipeCategory]

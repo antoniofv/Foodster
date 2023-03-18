@@ -14,6 +14,7 @@ final class GroceryListViewTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = true
 
+        app.launchArguments = ["-inMemoryDatabase"]
         app.launch()
     }
     

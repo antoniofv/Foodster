@@ -20,11 +20,11 @@ struct RecipeCategoryListView: View {
 
     var body: some View {
         NavigationView {
-            List(recipeListViewModel.categories.sorted(by: { $0.strCategory < $1.strCategory })) { category in
+            List(recipeListViewModel.categories.sorted(by: { $0.name < $1.name })) { category in
                 NavigationLink(destination: RecipeListView(recipeCategory: category)) {
 
                     HStack(alignment: .center, spacing: 16) {
-                        AsyncImage(url: URL(string: category.strCategoryThumb)) { image in
+                        AsyncImage(url: URL(string: category.thumbnail)) { image in
                             image.image?.resizable()
                         }
                         .scaledToFit()
@@ -33,7 +33,7 @@ struct RecipeCategoryListView: View {
                         .background(.gray.opacity(0.2))
                         .cornerRadius(40)
 
-                        Text(category.strCategory)
+                        Text(category.name)
                             .font(.title3)
                     }
 

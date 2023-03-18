@@ -23,7 +23,7 @@ struct RecipeDetailsView: View {
         ZStack(alignment: .topLeading) {
 
             GeometryReader { proxy in
-                AsyncImage(url: URL(string: loadedRecipe?.strMealThumb ?? "")) { image in
+                AsyncImage(url: URL(string: loadedRecipe?.thumbnail ?? "")) { image in
                     image.image?
                         .resizable()
                         .scaledToFill()
@@ -47,7 +47,7 @@ struct RecipeDetailsView: View {
 
                     VStack(alignment: .leading, spacing: 20) {
 
-                        Text(loadedRecipe?.strMeal ?? "")
+                        Text(loadedRecipe?.name ?? "")
                             .font(.title)
                             .bold()
 
@@ -132,7 +132,7 @@ struct RecipeDetailsView: View {
                 .font(.title3)
                 .bold()
 
-            if let youtubeLink = loadedRecipe?.strYoutube, !youtubeLink.isEmpty {
+            if let youtubeLink = loadedRecipe?.video, !youtubeLink.isEmpty {
                 Link(destination: URL(string: youtubeLink)!) {
                     HStack {
                         Image(systemName: "play.rectangle.fill")
@@ -144,7 +144,7 @@ struct RecipeDetailsView: View {
                 .padding(.zero.insetBy(top: 5, bottom: 10))
             }
 
-            Text(loadedRecipe?.strInstructions ?? "")
+            Text(loadedRecipe?.instructions ?? "")
                 .font(.callout)
                 .padding(.zero.insetBy(leading: 1, trailing: 20))
 

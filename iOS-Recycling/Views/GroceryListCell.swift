@@ -7,17 +7,19 @@
 
 import SwiftUI
 
+
 struct GroceryListCell: View {
-    
-    @Binding var groceryListItem: GroceryListItem
+
+    @ObservedObject var groceryListItem: GroceryListItem
     var focusState: FocusState<UUID?>.Binding
-    
+
     var isEditing: Bool = false
-    
+
     private let hPadding = 16.0
 
     var body: some View {
         let isChecked = groceryListItem.isChecked
+
         HStack(alignment: .center) {
             Button(action: {
                 groceryListItem.isChecked.toggle()
@@ -25,7 +27,7 @@ struct GroceryListCell: View {
                 Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
             }
             .foregroundColor(isChecked ? .gray : .green)
-            
+
             TextField("", text: $groceryListItem.name)
                 .font(.body)
                 .foregroundColor(isChecked ? .gray : nil)
@@ -37,13 +39,24 @@ struct GroceryListCell: View {
 
 }
 
+
 #if DEBUG
+
 struct GroceryListCell_Previews: PreviewProvider {
-    @State private static var item = GroceryListItem(name: "")
-    @FocusState static var focus: UUID?
     
     static var previews: some View {
-        GroceryListCell(groceryListItem: $item, focusState: $focus)
+        let provider = DataStoreProvider(inMemory: true)
+
+        @State var item = GroceryListItem(
+            context: provider.container.viewContext,
+            name: "My grocery list item",
+            order: 0
+        )
+        @FocusState var focus: UUID?
+
+        return GroceryListCell(groceryListItem: item, focusState: $focus)
+            .environment(\.managedObjectContext, provider.container.viewContext)
     }
 }
+
 #endif
