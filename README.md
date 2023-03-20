@@ -14,6 +14,7 @@ This project will also explore the modern iOS architecture patterns beyond the t
 
 ### Technologies and Frameworks
 
+    * AppIntents (Shortcuts and Siri)
     * Combine
     * Core Data
     * Swift 5
