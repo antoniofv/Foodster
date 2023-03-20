@@ -73,8 +73,12 @@ struct GlobalShortcutsProvider: AppShortcutsProvider {
         AppShortcut(
             intent: AddItemToGroceryList(),
             phrases: [
-                "Add \(\.$item) to \(.applicationName)",
-                "Add an item to \(.applicationName)"
+                "Add an item to \(.applicationName)",
+                "Add item to \(.applicationName)",
+                "Add to \(.applicationName)",
+                "Add a product to \(.applicationName)",
+                "Add product to \(.applicationName)",
+                "Add something to \(.applicationName)"
             ],
             systemImageName: "cart"
         )
