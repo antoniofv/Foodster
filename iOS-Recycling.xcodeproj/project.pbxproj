@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E20FB1E529C4CDEF00AC0B51 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E20FB1E429C4CDEF00AC0B51 /* README.md */; };
+		E20FB27229C6911500AC0B51 /* AddItemToGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FB27129C6911500AC0B51 /* AddItemToGroceryList.swift */; };
+		E20FB27F29C7A69500AC0B51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FB27E29C7A69500AC0B51 /* AppDelegate.swift */; };
 		E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFA29A83DC800511180 /* GroceryListView.swift */; };
 		E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */; };
 		E2155AFF29A83F0F00511180 /* GroceryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFE29A83F0F00511180 /* GroceryListItem.swift */; };
@@ -52,6 +54,10 @@
 
 /* Begin PBXFileReference section */
 		E20FB1E429C4CDEF00AC0B51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E20FB1EE29C6355600AC0B51 /* iOS-Recycling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS-Recycling.entitlements"; sourceTree = "<group>"; };
+		E20FB1F529C6434800AC0B51 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		E20FB27129C6911500AC0B51 /* AddItemToGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemToGroceryList.swift; sourceTree = "<group>"; };
+		E20FB27E29C7A69500AC0B51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2155AFA29A83DC800511180 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
 		E2155AFE29A83F0F00511180 /* GroceryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItem.swift; sourceTree = "<group>"; };
@@ -105,6 +111,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20FB1EC29C6321A00AC0B51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E20FB1EE29C6355600AC0B51 /* iOS-Recycling.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E20FB1F429C6434800AC0B51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E20FB1F529C6434800AC0B51 /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E20FB27029C6911500AC0B51 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				E20FB27129C6911500AC0B51 /* AddItemToGroceryList.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		E23574E329BFF1B2007AAF93 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +151,7 @@
 				E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */,
 				E2E7E1C9299FBFF300A5C883 /* iOS-RecyclingTests */,
 				E2E7E1D3299FBFF300A5C883 /* iOS-RecyclingUITests */,
+				E20FB1F429C6434800AC0B51 /* Frameworks */,
 				E2E7E1B7299FBFF200A5C883 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,6 +169,8 @@
 		E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */ = {
 			isa = PBXGroup;
 			children = (
+				E20FB27029C6911500AC0B51 /* Intents */,
+				E20FB1EC29C6321A00AC0B51 /* Supporting Files */,
 				E23574E329BFF1B2007AAF93 /* Misc */,
 				E2E7E1EE299FC6F800A5C883 /* Tools */,
 				E2E7E1ED299FC6E300A5C883 /* API */,
@@ -213,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E7E1B9299FBFF200A5C883 /* iOS_RecyclingApp.swift */,
+				E20FB27E29C7A69500AC0B51 /* AppDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +353,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 				Base,
 			);
 			mainGroup = E2E7E1AD299FBFF200A5C883;
@@ -373,7 +408,9 @@
 				E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */,
 				E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */,
 				E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */,
+				E20FB27F29C7A69500AC0B51 /* AppDelegate.swift in Sources */,
 				E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */,
+				E20FB27229C6911500AC0B51 /* AddItemToGroceryList.swift in Sources */,
 				E2322CE029C0D3240036F3FC /* EdgeInsets+Extensions.swift in Sources */,
 				E2CA00A429C3575D00B01E7B /* iOS-Recycling.xcdatamodeld in Sources */,
 				E24B650929B73F740058D84D /* RecipeListView.swift in Sources */,
@@ -538,11 +575,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Recycling/Supporting Files/iOS-Recycling.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS-Recycling/Preview Content\"";
+				DEVELOPMENT_TEAM = KC9WE3YL5H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS-Recycling/Info.plist";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Add items to your grocery list";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -566,11 +607,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Recycling/Supporting Files/iOS-Recycling.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS-Recycling/Preview Content\"";
+				DEVELOPMENT_TEAM = KC9WE3YL5H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS-Recycling/Info.plist";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Add items to your grocery list";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -7,17 +7,18 @@
 
 import SwiftUI
 
+
 @main
 struct iOS_RecyclingApp: App {
 
-    let inMemoryDatabase = CommandLine.arguments.contains("-inMemoryDatabase")
+    @UIApplicationDelegateAdaptor var appDelegate: AppDelegate
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(
                     \.managedObjectContext,
-                     DataStoreProvider(inMemory: inMemoryDatabase).container.viewContext
+                     DataStoreProvider.shared.container.viewContext
                 )
         }
     }

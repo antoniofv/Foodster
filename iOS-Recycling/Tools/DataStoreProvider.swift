@@ -11,7 +11,10 @@ import Foundation
 
 class DataStoreProvider: ObservableObject {
 
-    static var shared = DataStoreProvider()
+    static var shared = {
+        let inMemory = CommandLine.arguments.contains("-inMemoryDatabase")
+        return DataStoreProvider(inMemory: inMemory)
+    }()
 
     let container = NSPersistentContainer(name: "iOS-Recycling")
 
@@ -26,6 +29,8 @@ class DataStoreProvider: ObservableObject {
                 print("Data Store could not be initialized: \(error.localizedDescription)")
             }
         }
+
+        container.viewContext.automaticallyMergesChangesFromParent = true
     }
 
 }
