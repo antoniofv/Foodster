@@ -30,8 +30,7 @@ struct AddItemToGroceryList: AppIntent {
         let dataStoreProvider = DataStoreProvider.shared
         let context = dataStoreProvider.container.viewContext
 
-        let request = GroceryListItem.fetchRequest()
-        let result = try context.fetch(request).count
+        let result = try context.count(for: GroceryListItem.fetchRequest())
 
         let _ = GroceryListItem(context: context, name: item, order: result)
         try context.save()

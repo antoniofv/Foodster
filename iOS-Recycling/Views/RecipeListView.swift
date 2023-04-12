@@ -19,7 +19,12 @@ struct RecipeListView: View {
                 RecipeDetailsView(recipeId: recipe.id)
             }) {
                 HStack(alignment: .center, spacing: 16) {
-                    AsyncImage(url: URL(string: recipe.thumbnail)) { image in
+                    AsyncImage(
+                        url: URL(string: recipe.thumbnail),
+                        transaction: Transaction(
+                            animation: .easeIn(duration: 0.15)
+                        )
+                    ) { image in
                         image.image?.resizable()
                     }
                     .scaledToFit()
@@ -54,7 +59,10 @@ struct RecipeListView: View {
 struct RecipeListView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let recipeListViewModel = RecipeListViewModel(api: MockTheMealDBAPI())
+        let recipeListViewModel = RecipeListViewModel(
+            api: MockTheMealDBAPI(),
+            context: DataStoreProvider(inMemory: true).container.viewContext
+        )
 
         let recipeCategory = RecipeCategory(
             id: "1",

@@ -18,12 +18,18 @@ struct RecipeDetailsView: View {
 
     @State private var loadedRecipe: Recipe?
     @State private var scrollOffset: CGFloat = .zero
+    @State private var areIngredientsAddedToGroceryList = false
 
     var body: some View {
         ZStack(alignment: .topLeading) {
 
             GeometryReader { proxy in
-                AsyncImage(url: URL(string: loadedRecipe?.thumbnail ?? "")) { image in
+                AsyncImage(
+                    url: URL(string: loadedRecipe?.thumbnail ?? ""),
+                    transaction: Transaction(
+                        animation: .easeIn(duration: 0.15)
+                    )
+                ) { image in
                     image.image?
                         .resizable()
                         .scaledToFill()
@@ -71,7 +77,8 @@ struct RecipeDetailsView: View {
 
             } onOffsetChange: { offset in
                 scrollOffset = offset
-            }.shadow(radius: 20, y: 2)
+            }
+            .shadow(radius: 20, y: 2)
 
         }
         .overlay {
@@ -100,7 +107,12 @@ struct RecipeDetailsView: View {
 
     }
 
-    fileprivate func IngredientListView() -> some View {
+}
+
+
+extension RecipeDetailsView {
+
+    private func IngredientListView() -> some View {
         VStack(alignment: .leading) {
 
             Text("Ingredients")
@@ -122,10 +134,21 @@ struct RecipeDetailsView: View {
             .background(.gray.opacity(0.15))
             .cornerRadius(10)
 
+            Spacer(minLength: 14)
+
+            Button(action: addIngredientsToGroceryList) {
+                Image(systemName: "cart.fill")
+                Text("Add ingredients to the grocery list")
+            }
+            .font(.callout)
+            .bold()
+            .buttonStyle(.bordered)
+            .tint(.orange)
+            .disabled(areIngredientsAddedToGroceryList)
         }
     }
 
-    fileprivate func InstructionsView() -> some View {
+    private func InstructionsView() -> some View {
         VStack(alignment: .leading, spacing: 10) {
 
             Text("Instructions")
@@ -151,6 +174,16 @@ struct RecipeDetailsView: View {
         }
     }
 
+    private func addIngredientsToGroceryList() {
+        guard let recipe = loadedRecipe else {
+            return
+        }
+
+        recipeListViewModel.addRecipeIngredientsToGroceryList(recipe: recipe)
+
+        areIngredientsAddedToGroceryList = true
+    }
+
 }
 
 
@@ -159,8 +192,10 @@ struct RecipeDetailsView: View {
 struct RecipeDetailsView_Previews: PreviewProvider {
 
     static var previews: some View {
+        let dataStoreProvider = DataStoreProvider(inMemory: true)
         @ObservedObject var mockModel = RecipeListViewModel(
-            api: MockTheMealDBAPI()
+            api: MockTheMealDBAPI(),
+            context: dataStoreProvider.container.viewContext
         )
 
         return NavigationView {
