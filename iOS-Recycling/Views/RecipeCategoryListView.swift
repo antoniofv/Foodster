@@ -5,16 +5,18 @@
 //  Created by Antonio Fernandez Vega on 7/3/23.
 //
 
+import CoreData
 import SwiftUI
+
 
 struct RecipeCategoryListView: View {
 
     @StateObject private var recipeListViewModel: RecipeListViewModel
 
 
-    init(api: TheMealDBAPIProtocol) {
+    init(api: TheMealDBAPIProtocol, context: NSManagedObjectContext) {
         _recipeListViewModel = StateObject(wrappedValue: {
-            RecipeListViewModel(api: api)
+            RecipeListViewModel(api: api, context: context)
         }())
     }
 
@@ -24,7 +26,12 @@ struct RecipeCategoryListView: View {
                 NavigationLink(destination: RecipeListView(recipeCategory: category)) {
 
                     HStack(alignment: .center, spacing: 16) {
-                        AsyncImage(url: URL(string: category.thumbnail)) { image in
+                        AsyncImage(
+                            url: URL(string: category.thumbnail),
+                            transaction: Transaction(
+                                animation: .easeIn(duration: 0.15)
+                            )
+                        ) { image in
                             image.image?.resizable()
                         }
                         .scaledToFit()
@@ -54,7 +61,7 @@ struct RecipeCategoryListView: View {
     private func loadViewContent() {
         Task(priority: .background) {
             do {
-                try await self.recipeListViewModel.getRecipeCategories()
+                try await recipeListViewModel.getRecipeCategories()
             } catch {
                 print(error)
             }
@@ -68,7 +75,10 @@ struct RecipeCategoryListView: View {
 
 struct RecipeCategoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCategoryListView(api: MockTheMealDBAPI())
+        RecipeCategoryListView(
+            api: MockTheMealDBAPI(),
+            context: DataStoreProvider(inMemory: true).container.viewContext
+        )
     }
 }
 

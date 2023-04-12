@@ -14,7 +14,7 @@ final class GroceryListViewModel: NSObject, ObservableObject {
     @Published
     var groceries: [GroceryListItem] = []
 
-    private let context: NSManagedObjectContext
+    private unowned var context: NSManagedObjectContext
 
     // The view model will keep 'groceries' updated through the NSFetchedResultsController.
     private let groceriesController: NSFetchedResultsController<GroceryListItem>
@@ -30,11 +30,11 @@ final class GroceryListViewModel: NSObject, ObservableObject {
 
         super.init()
 
-        self.groceriesController.delegate = self
+        groceriesController.delegate = self
 
         do {
-            try self.groceriesController.performFetch()
-            groceries = self.groceriesController.fetchedObjects ?? []
+            try groceriesController.performFetch()
+            groceries = groceriesController.fetchedObjects ?? []
         } catch {
             print("failed to fetch grocery list items!")
         }
@@ -49,9 +49,9 @@ extension GroceryListViewModel {
 
     func createItem() -> GroceryListItem {
         let newItem = GroceryListItem(
-            context: self.context,
+            context: context,
             name: "",
-            order: self.groceries.count
+            order: groceries.count
         )
 
         save()
@@ -60,20 +60,21 @@ extension GroceryListViewModel {
     }
 
     func removeItem(atOffsets indexSet: IndexSet) {
-        var newGroceries = Array(self.groceries)
+        var newGroceries = Array(groceries)
         let item = newGroceries.remove(at: indexSet.first!)
 
-        self.context.perform {
-            self.context.delete(item)
+        context.perform { [weak self] in
+            guard let self else { return }
 
-            self.updateListItemOrdering(items: newGroceries)
-
-            self.save()
+            context.delete(item)
+            updateListItemOrdering(items: newGroceries)
         }
+
+        save()
     }
 
     func moveItem(fromOffsets from: IndexSet, toOffset to: Int) {
-        var newArray = Array(self.groceries)
+        var newArray = Array(groceries)
         newArray.move(fromOffsets: from, toOffset: to)
 
         updateListItemOrdering(items: newArray)
@@ -82,14 +83,16 @@ extension GroceryListViewModel {
     }
 
     func save() {
-        if !self.context.hasChanges {
+        if !context.hasChanges {
             return
         }
 
         Task {
-            await self.context.perform {
+            await context.perform { [weak self] in
+                guard let self else { return }
+
                 do {
-                    try self.context.save()
+                    try context.save()
                 } catch {
                     print(error)
                 }
@@ -122,7 +125,7 @@ extension GroceryListViewModel: NSFetchedResultsControllerDelegate {
         _ controller: NSFetchedResultsController<NSFetchRequestResult>
     ) {
         if let newGroceries = controller.fetchedObjects as? [GroceryListItem] {
-            self.groceries = newGroceries
+            groceries = newGroceries
         }
     }
 
