@@ -104,7 +104,7 @@ struct GroceryListView: View {
                 .toolbarBackground(Color.green, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
-                .background(Color.gray.opacity(0.15))
+                .background(Assets.Colors.groceryListBackground)
                 .scrollContentBackground(.hidden)
                 .toolbar {
                     ToolbarItem {
@@ -136,10 +136,8 @@ struct GroceryListView: View {
                 }
 //                .gesture(
 //                    SpatialTapGesture(coordinateSpace: .local).onEnded { event in
-//                        print("GESTURATOR")
 //                        // Remove focus only when the tap location is beyond the list content.
 //                        if (focusedItem != nil && event.location.y > listHeight) {
-//                            print("Unfocus item!")
 //                            focusedItem = nil
 //                        }
 //                    },

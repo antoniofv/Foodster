@@ -70,7 +70,8 @@ struct RecipeDetailsView: View {
                         bottom: 400,
                         trailing: 20
                     ))
-                    .background(.white)
+                    .background(Color("recipe-detail-background"))
+                    .background(.background)
                     .cornerRadius(16)
                 }
                 .padding(.zero.insetBy(top: recipeImageHeight - 20, bottom: -380))

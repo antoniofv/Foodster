@@ -35,11 +35,13 @@ struct RecipeListView: View {
                     Text(recipe.name).font(.title3)
                 }
             }
+            .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
         .navigationBarTitle(Text(recipeCategory.name))
         .toolbarBackground(Color.orange, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+        .background(Assets.Colors.recipesBackground)
         .onAppear {
             loadViewContent()
         }

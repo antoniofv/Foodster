@@ -39,11 +39,13 @@ struct RecipeCategoryListView: View {
                     }
 
                 }
+                .listRowBackground(Color.clear)
             }
             .listStyle(.plain)
             .navigationBarTitle(Text("Recipes"))
             .toolbarBackground(Color.orange, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .background(Assets.Colors.recipesBackground)
         }
         .environmentObject(recipeListViewModel)
         .accentColor(.white)

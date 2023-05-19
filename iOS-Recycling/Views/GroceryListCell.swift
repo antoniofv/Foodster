@@ -35,7 +35,7 @@ struct GroceryListCell: View {
                 .foregroundColor(isChecked ? .gray : nil)
                 .focused(focusState, equals: groceryListItem.id)
         }
-        .listRowBackground(isChecked ? Color.clear : Color.white)
+        .listRowBackground(isChecked ? Color.clear : Assets.Colors.groceryListCellBackgroundActive)
         .padding(.zero.insetBy(horizontal: 16))
     }
 
