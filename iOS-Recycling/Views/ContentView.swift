@@ -23,7 +23,10 @@ struct ContentView: View {
             }
 
             RecipeCategoryListView(
-                api: TheMealDBAPI(),
+                api: TheMealDBAPI(
+                    baseUrl: "https://www.themealdb.com/api/json/v1/1",
+                    requestManager: RequestManager.shared
+                ),
                 context: dataContext
             )
             .tabItem {

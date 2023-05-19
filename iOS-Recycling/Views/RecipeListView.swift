@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct RecipeListView: View {
     
     @EnvironmentObject var recipeListViewModel: RecipeListViewModel
@@ -44,10 +45,15 @@ struct RecipeListView: View {
         }
     }
 
+}
+
+
+extension RecipeListView {
+
     private func loadViewContent() {
         Task(priority: .background) {
             do {
-                try await self.recipeListViewModel.getRecipes(forCategory: recipeCategory)
+                try await recipeListViewModel.getRecipes(forCategory: recipeCategory)
             } catch {
                 print(error)
             }
@@ -55,6 +61,9 @@ struct RecipeListView: View {
     }
 
 }
+
+
+#if DEBUG
 
 struct RecipeListView_Previews: PreviewProvider {
 
@@ -78,3 +87,5 @@ struct RecipeListView_Previews: PreviewProvider {
         ).environmentObject(recipeListViewModel)
     }
 }
+
+#endif

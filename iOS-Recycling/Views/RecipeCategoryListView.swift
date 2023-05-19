@@ -14,12 +14,6 @@ struct RecipeCategoryListView: View {
     @StateObject private var recipeListViewModel: RecipeListViewModel
 
 
-    init(api: TheMealDBAPIProtocol, context: NSManagedObjectContext) {
-        _recipeListViewModel = StateObject(wrappedValue: {
-            RecipeListViewModel(api: api, context: context)
-        }())
-    }
-
     var body: some View {
         NavigationView {
             List(recipeListViewModel.categories.sorted(by: { $0.name < $1.name })) { category in
@@ -57,6 +51,18 @@ struct RecipeCategoryListView: View {
             loadViewContent()
         }
     }
+
+
+    init(api: TheMealDBAPIProtocol, context: NSManagedObjectContext) {
+        _recipeListViewModel = StateObject(wrappedValue: {
+            RecipeListViewModel(api: api, context: context)
+        }())
+    }
+
+}
+
+
+extension RecipeCategoryListView {
 
     private func loadViewContent() {
         Task(priority: .background) {

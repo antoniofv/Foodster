@@ -21,38 +21,43 @@ protocol TheMealDBAPIProtocol {
 
 final class TheMealDBAPI: TheMealDBAPIProtocol {
 
-    private static let apiBaseUrlString = "https://www.themealdb.com/api/json/v1/1/"
+    private let requestManager: RequestManager
 
-    private static let categoriesUrl: URL! = URL(string: apiBaseUrlString + "categories.php")
-    private static let recipesByCategorysUrl: URL! = URL(string: apiBaseUrlString + "filter.php")
-    private static let recipeByIdUrl: URL! = URL(string: apiBaseUrlString + "lookup.php")
+    public let baseUrl: String
 
-    typealias CategoriesDictionary = Dictionary<String, [RecipeCategory]>
-    typealias RecipesDictionary = Dictionary<String, [Recipe]>
+
+    init(baseUrl: String, requestManager: RequestManager) {
+        self.baseUrl = baseUrl
+        self.requestManager = requestManager
+    }
+
+}
+
+
+extension TheMealDBAPI {
 
     func getCategories() async throws -> [RecipeCategory] {
-        let categoriesDictionary: CategoriesDictionary = try await RequestManager.getRequest(url: TheMealDBAPI.categoriesUrl)
-        return categoriesDictionary["categories"]!
+        let response: CategoriesResponse = try await requestManager.getRequest(
+            url: CategoriesResource(baseUrl: baseUrl).url
+        )
+
+        return response.categories
     }
 
     func getRecipes(by category: RecipeCategory) async throws -> [Recipe] {
-        let recipesDictionary: RecipesDictionary = try await RequestManager.getRequest(
-            url: TheMealDBAPI.recipesByCategorysUrl.appending(queryItems: [
-                URLQueryItem(name: "c", value: category.name)
-            ])
+        let response: RecipesResponse = try await requestManager.getRequest(
+            url: RecipesResource(baseUrl: baseUrl, categoryName: category.name).url
         )
         
-        return recipesDictionary["meals"]!
+        return response.meals
     }
 
     func getRecipe(id: String) async throws -> Recipe {
-        let recipesDictionary: RecipesDictionary = try await RequestManager.getRequest(
-            url: TheMealDBAPI.recipeByIdUrl.appending(queryItems: [
-                URLQueryItem(name: "i", value: id)
-            ])
+        let response: RecipeDetailResponse = try await requestManager.getRequest(
+            url: RecipeDetailResource(baseUrl: baseUrl, id: id).url
         )
 
-        return recipesDictionary["meals"]![0]
+        return response.recipe
     }
 
 }

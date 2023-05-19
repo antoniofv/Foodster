@@ -63,9 +63,7 @@ extension GroceryListViewModel {
         var newGroceries = Array(groceries)
         let item = newGroceries.remove(at: indexSet.first!)
 
-        context.perform { [weak self] in
-            guard let self else { return }
-
+        context.perform { [self] in
             context.delete(item)
             updateListItemOrdering(items: newGroceries)
         }
@@ -88,9 +86,7 @@ extension GroceryListViewModel {
         }
 
         Task {
-            await context.perform { [weak self] in
-                guard let self else { return }
-
+            await context.perform { [self] in
                 do {
                     try context.save()
                 } catch {

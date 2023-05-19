@@ -66,9 +66,7 @@ extension RecipeListViewModel {
 
             let itemSet = Set(fetchedItems.map { $0.name.lowercased() })
 
-            try context.performAndWait { [weak self] in
-                guard let self else { return }
-
+            try context.performAndWait {
                 recipe.ingredients.enumerated().forEach { (rIndex, rIngredient) in
                     if !itemSet.contains(rIngredient.name.lowercased()) {
                         let _ = GroceryListItem(
