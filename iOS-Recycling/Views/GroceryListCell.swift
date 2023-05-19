@@ -15,8 +15,6 @@ struct GroceryListCell: View {
 
     var isEditing: Bool = false
 
-    private let hPadding = 16.0
-
     var body: some View {
         let isChecked = groceryListItem.isChecked
 
@@ -25,16 +23,20 @@ struct GroceryListCell: View {
                 groceryListItem.isChecked.toggle()
             }) {
                 Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
+                    .resizable()
             }
+            .frame(width: 20, height: 20)
+            .buttonStyle(.borderless)  // Needed to prevent button's tap target to cover the whole cell.
             .foregroundColor(isChecked ? .gray : .green)
 
             TextField("", text: $groceryListItem.name)
                 .font(.body)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .foregroundColor(isChecked ? .gray : nil)
                 .focused(focusState, equals: groceryListItem.id)
         }
         .listRowBackground(isChecked ? Color.clear : Color.white)
-        .padding(EdgeInsets(top: 0, leading: hPadding, bottom: 0, trailing: hPadding))
+        .padding(.zero.insetBy(horizontal: 16))
     }
 
 }
