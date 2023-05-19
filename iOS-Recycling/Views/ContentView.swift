@@ -12,6 +12,8 @@ struct ContentView: View {
 
     @Environment(\.managedObjectContext) var dataContext
 
+    let api: TheMealDBAPIProtocol!
+
 
     var body: some View {
         TabView() {
@@ -22,10 +24,7 @@ struct ContentView: View {
                 Label("Groceries", systemImage: "cart")
             }
 
-            RecipeCategoryListView(
-                api: TheMealDBAPI(),
-                context: dataContext
-            )
+            RecipeCategoryListView(api: api, context: dataContext)
             .tabItem {
                 Label("Recipes", systemImage: "fork.knife")
             }
@@ -40,7 +39,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
 
     static var previews: some View {
-        ContentView()
+        ContentView(api: MockTheMealDBAPI())
             .environment(\.managedObjectContext, DataStoreProvider(inMemory: true).container.viewContext)
     }
 
