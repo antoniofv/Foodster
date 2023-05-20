@@ -123,10 +123,14 @@ struct GroceryListView: View {
                 .overlay(Group {
                     // Empty list view
                     if groceryListViewModel.groceries.isEmpty {
-                        Text("Add some items to the list!")
-                            .accessibilityIdentifier("emptyListText")
-                            .font(.title2)
-                            .foregroundColor(Color(white: 0.4))
+                        VStack {
+                            Text("Add some items to the list!")
+                                .accessibilityIdentifier("emptyListText")
+                                .font(.title2)
+                                .foregroundColor(Color(white: 0.4))
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Assets.Colors.groceryListBackground)
                     }
                 })
                 .backgroundPreferenceValue(BoundsPreferenceKey.self) { rects in
