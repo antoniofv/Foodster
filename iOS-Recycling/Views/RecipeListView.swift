@@ -75,18 +75,12 @@ struct RecipeListView_Previews: PreviewProvider {
             context: DataStoreProvider(inMemory: true).container.viewContext
         )
 
-        let recipeCategory = RecipeCategory(
-            id: "1",
-            name: "Pizza",
-            thumbnail: "",
-            description: "Best food in the World!"
-        )
-
-        recipeListViewModel.categories = [recipeCategory]
-
-        return RecipeListView(
-            recipeCategory: recipeCategory
-        ).environmentObject(recipeListViewModel)
+        return NavigationStack {
+            RecipeListView(
+                recipeCategory: MockRecipeCategory.category1
+            )
+            .environmentObject(recipeListViewModel)
+        }
     }
 }
 

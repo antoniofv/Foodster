@@ -70,8 +70,7 @@ struct RecipeDetailsView: View {
                         bottom: 400,
                         trailing: 20
                     ))
-                    .background(Color("recipe-detail-background"))
-                    .background(.background)
+                    .background(Assets.Colors.recipesBackground)
                     .cornerRadius(16)
                 }
                 .padding(.zero.insetBy(top: recipeImageHeight - 20, bottom: -380))
@@ -200,7 +199,7 @@ struct RecipeDetailsView_Previews: PreviewProvider {
         )
 
         return NavigationView {
-            RecipeDetailsView(recipeId: "1")
+            RecipeDetailsView(recipeId: "53058")
                 .environmentObject(mockModel)
         }
     }

@@ -30,6 +30,9 @@
 		E24B650729B6BEC20058D84D /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */; };
 		E24B650929B73F740058D84D /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650829B73F740058D84D /* RecipeListView.swift */; };
 		E27AB45A2A1838220085C2F4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AB4592A1838220085C2F4 /* Assets.swift */; };
+		E2C7472B2A1953FC00DEE7A2 /* MockRecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472A2A1953FC00DEE7A2 /* MockRecipeCategory.swift */; };
+		E2C7472D2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472C2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift */; };
+		E2C7472F2A19566800DEE7A2 /* MockRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472E2A19566800DEE7A2 /* MockRecipe.swift */; };
 		E2CA009029C21DC500B01E7B /* DataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */; };
 		E2CA00A429C3575D00B01E7B /* iOS-Recycling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2CA009129C21F7C00B01E7B /* iOS-Recycling.xcdatamodeld */; };
 		E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD669829BA510400845741 /* RecipeDetailsView.swift */; };
@@ -87,6 +90,9 @@
 		E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		E24B650829B73F740058D84D /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		E27AB4592A1838220085C2F4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E2C7472A2A1953FC00DEE7A2 /* MockRecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecipeCategory.swift; sourceTree = "<group>"; };
+		E2C7472C2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTheMealDBAPI.swift; sourceTree = "<group>"; };
+		E2C7472E2A19566800DEE7A2 /* MockRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecipe.swift; sourceTree = "<group>"; };
 		E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreProvider.swift; sourceTree = "<group>"; };
 		E2CA009229C21F7C00B01E7B /* iOS-Recycling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iOS-Recycling.xcdatamodel"; sourceTree = "<group>"; };
 		E2CD669829BA510400845741 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
@@ -182,6 +188,16 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		E2C747292A19523600DEE7A2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E2C7472A2A1953FC00DEE7A2 /* MockRecipeCategory.swift */,
+				E2C7472C2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift */,
+				E2C7472E2A19566800DEE7A2 /* MockRecipe.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		E2E7E1AD299FBFF200A5C883 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +223,7 @@
 		E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */ = {
 			isa = PBXGroup;
 			children = (
+				E2C747292A19523600DEE7A2 /* Mocks */,
 				E20FB27029C6911500AC0B51 /* Intents */,
 				E20FB1EC29C6321A00AC0B51 /* Supporting Files */,
 				E23574E329BFF1B2007AAF93 /* Misc */,
@@ -456,6 +473,7 @@
 				E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */,
 				E27AB45A2A1838220085C2F4 /* Assets.swift in Sources */,
 				E20FB27F29C7A69500AC0B51 /* AppDelegate.swift in Sources */,
+				E2C7472F2A19566800DEE7A2 /* MockRecipe.swift in Sources */,
 				E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */,
 				E228BD192A17D0C4004F8E6D /* RecipesResource.swift in Sources */,
 				E228BD102A17AF11004F8E6D /* RecipesResponse.swift in Sources */,
@@ -467,11 +485,13 @@
 				E24B650929B73F740058D84D /* RecipeListView.swift in Sources */,
 				E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */,
 				E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */,
+				E2C7472D2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift in Sources */,
 				E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */,
 				E23574E229BFE070007AAF93 /* Recipe.swift in Sources */,
 				E2CA009029C21DC500B01E7B /* DataStoreProvider.swift in Sources */,
 				E228BD152A17CD5A004F8E6D /* APIResource.swift in Sources */,
 				E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */,
+				E2C7472B2A1953FC00DEE7A2 /* MockRecipeCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
