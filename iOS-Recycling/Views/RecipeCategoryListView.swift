@@ -15,7 +15,7 @@ struct RecipeCategoryListView: View {
 
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(recipeListViewModel.categories.sorted(by: { $0.name < $1.name })) { category in
                 NavigationLink(destination: RecipeListView(recipeCategory: category)) {
 
@@ -39,14 +39,16 @@ struct RecipeCategoryListView: View {
                     }
 
                 }
+                .listRowBackground(Color.clear)
             }
             .listStyle(.plain)
             .navigationBarTitle(Text("Recipes"))
             .toolbarBackground(Color.orange, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .background(Assets.Colors.recipesBackground)
         }
         .environmentObject(recipeListViewModel)
-        .accentColor(.white)
+        .tint(.white)
         .onAppear {
             loadViewContent()
         }
@@ -80,12 +82,14 @@ extension RecipeCategoryListView {
 #if DEBUG
 
 struct RecipeCategoryListView_Previews: PreviewProvider {
+
     static var previews: some View {
         RecipeCategoryListView(
             api: MockTheMealDBAPI(),
             context: DataStoreProvider(inMemory: true).container.viewContext
         )
     }
+
 }
 
 #endif

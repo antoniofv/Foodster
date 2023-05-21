@@ -104,7 +104,7 @@ struct GroceryListView: View {
                 .toolbarBackground(Color.green, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
-                .background(Color.gray.opacity(0.15))
+                .background(Assets.Colors.groceryListBackground)
                 .scrollContentBackground(.hidden)
                 .toolbar {
                     ToolbarItem {
@@ -123,10 +123,14 @@ struct GroceryListView: View {
                 .overlay(Group {
                     // Empty list view
                     if groceryListViewModel.groceries.isEmpty {
-                        Text("Add some items to the list!")
-                            .accessibilityIdentifier("emptyListText")
-                            .font(.title2)
-                            .foregroundColor(Color(white: 0.4))
+                        VStack {
+                            Text("Add some items to the list!")
+                                .accessibilityIdentifier("emptyListText")
+                                .font(.title2)
+                                .foregroundColor(Color(white: 0.4))
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Assets.Colors.groceryListBackground)
                     }
                 })
                 .backgroundPreferenceValue(BoundsPreferenceKey.self) { rects in
@@ -136,10 +140,8 @@ struct GroceryListView: View {
                 }
 //                .gesture(
 //                    SpatialTapGesture(coordinateSpace: .local).onEnded { event in
-//                        print("GESTURATOR")
 //                        // Remove focus only when the tap location is beyond the list content.
 //                        if (focusedItem != nil && event.location.y > listHeight) {
-//                            print("Unfocus item!")
 //                            focusedItem = nil
 //                        }
 //                    },

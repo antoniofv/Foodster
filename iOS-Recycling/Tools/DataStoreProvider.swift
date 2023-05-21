@@ -12,6 +12,7 @@ import Foundation
 class DataStoreProvider: ObservableObject {
 
     static var shared = {
+        // This check is required due to Intent access to the storage.
         let inMemory = CommandLine.arguments.contains("-inMemoryDatabase")
         return DataStoreProvider(inMemory: inMemory)
     }()

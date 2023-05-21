@@ -30,13 +30,23 @@ The recipe book's content is obtained from [TheMealDB API](https://www.themealdb
 
 ### Grocery list view
 
-<img src="/docs/readme/groceries1.jpg" alt="Grocery list" height="480" />
+<div style="flowDirection: horizontal;">
+    <img src="./docs/readme/grocery-list-01.png" alt="Grocery list" height="480" />
+    <img src="./docs/readme/dark-mode-01.png" alt="Grocery list (Dark mode)" height="480" />
+</div>
 
 ### Recipe book
 
 <div style="flowDirection: horizontal;">
-    <img src="/docs/readme/recipes1.jpg" alt="Recipe category list" height="480" />
-    <img src="/docs/readme/recipes2.jpg" alt="Recipe list" height="480" />
-    <img src="/docs/readme/recipes3.jpg" alt="Recipe" height="480" />
+    <img src="./docs/readme/recipe-book-01.png" alt="Recipe category list" height="480" />
+    <img src="./docs/readme/recipe-book-02.png" alt="Recipe list" height="480" />
+    <img src="./docs/readme/recipe-book-03.png" alt="Recipe" height="480" />
 </div>
 
+### Recipe book (Dark mode)
+
+<div style="flowDirection: horizontal;">
+    <img src="./docs/readme/dark-mode-02.png" alt="Recipe category list" height="480" />
+    <img src="./docs/readme/dark-mode-03.png" alt="Recipe list" height="480" />
+    <img src="./docs/readme/dark-mode-04.png" alt="Recipe" height="480" />
+</div>

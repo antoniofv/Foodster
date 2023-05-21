@@ -10,24 +10,52 @@ import SwiftUI
 
 struct ContentView: View {
 
+    private enum TabIdentifier {
+        case groceries
+        case recipes
+    }
+
+
     @Environment(\.managedObjectContext) var dataContext
+
+    @State private var selectedTab = TabIdentifier.groceries
 
     let api: TheMealDBAPIProtocol!
 
 
     var body: some View {
-        TabView() {
-            GroceryListView(
-                viewModel: GroceryListViewModel(context: dataContext)
-            )
-            .tabItem {
-                Label("Groceries", systemImage: "cart")
-            }
+        TabView(selection: $selectedTab) {
+            Group {
+                GroceryListView(
+                    viewModel: GroceryListViewModel(context: dataContext)
+                )
+                .tabItem {
+                    Label("Groceries", systemImage: "cart")
+                }
+                .tag(TabIdentifier.groceries)
 
-            RecipeCategoryListView(api: api, context: dataContext)
-            .tabItem {
-                Label("Recipes", systemImage: "fork.knife")
+                RecipeCategoryListView(api: api, context: dataContext)
+                    .tabItem {
+                        Label("Recipes", systemImage: "fork.knife")
+                    }
+                    .tag(TabIdentifier.recipes)
             }
+            .toolbarBackground(Color.primary.opacity(0.01), for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
+        }
+        .tint(tabBarTintColor(forTab: selectedTab))
+
+    }
+
+}
+
+
+extension ContentView {
+
+    private func tabBarTintColor(forTab tab: TabIdentifier) -> Color {
+        switch tab {
+        case .groceries: return .green
+        case .recipes: return .orange
         }
     }
 
