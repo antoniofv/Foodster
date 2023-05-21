@@ -42,7 +42,7 @@ struct RecipeCategoryListView: View {
                 .listRowBackground(Color.clear)
             }
             .listStyle(.plain)
-            .navigationBarTitle(Text("Recipes"))
+            .navigationBarTitle(Text(LocalizedStringKey(LocalizationKeys.RecipeCategoryListView.title)))
             .toolbarBackground(Color.orange, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .background(Assets.Colors.recipesBackground)

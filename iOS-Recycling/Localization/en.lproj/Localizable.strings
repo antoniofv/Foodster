@@ -12,3 +12,18 @@
 "groceryListView.accessibility.addButtonHint" = "Add a grocery item to the list";
 "groceryListView.title" = "Groceries";
 "groceryListView.emptyListMessage" = "Add some items to the list!";
+
+
+/* Recipe category list view */
+
+"recipeCategoryListView.title" = "Recipes";
+
+
+/* Recipe details view */
+
+"recipeDetailsView.title" = "Recipe";
+"recipeDetailsView.loadingMessage" = "Loading...";
+"recipeDetailsView.ingredientsSection.title" = "Ingredients";
+"recipeDetailsView.ingredientsSection.addToGroceryListButtonTitle" = "Add ingredients to the grocery list";
+"recipeDetailsView.instructionsSection.title" = "Instructions";
+"recipeDetailsView.instructionsSection.youtubeButtonTitle" = "Watch on YouTube";

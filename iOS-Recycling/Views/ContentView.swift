@@ -39,7 +39,10 @@ struct ContentView: View {
 
                 RecipeCategoryListView(api: api, context: dataContext)
                     .tabItem {
-                        Label("Recipes", systemImage: "fork.knife")
+                        Label(
+                            LocalizedStringKey(LocalizationKeys.RecipeCategoryListView.title),
+                            systemImage: "fork.knife"
+                        )
                     }
                     .tag(TabIdentifier.recipes)
             }
