@@ -24,6 +24,11 @@
 		E2322CE029C0D3240036F3FC /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */; };
 		E23574E229BFE070007AAF93 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23574E129BFE070007AAF93 /* Recipe.swift */; };
 		E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */; };
+		E24278142A1AB1EF002C6B56 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278132A1AB1EF002C6B56 /* LocalizationKeys.swift */; };
+		E24278182A1AB654002C6B56 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */; };
+		E24278192A1AB78F002C6B56 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E242781B2A1AB78F002C6B56 /* Localizable.strings */; };
+		E242781C2A1AB82A002C6B56 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */; };
+		E242781D2A1AB8FA002C6B56 /* AppArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD1C2A17E145004F8E6D /* AppArguments.swift */; };
 		E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */; };
 		E24B650329B6BA340058D84D /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650229B6BA340058D84D /* TheMealDBAPI.swift */; };
 		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
@@ -43,7 +48,6 @@
 		E2E7E1C1299FBFF300A5C883 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E7E1C0299FBFF300A5C883 /* Preview Assets.xcassets */; };
 		E2E7E1CB299FBFF300A5C883 /* iOS_RecyclingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1CA299FBFF300A5C883 /* iOS_RecyclingTests.swift */; };
 		E2E7E1D5299FBFF300A5C883 /* GroceryListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1D4299FBFF300A5C883 /* GroceryListViewTests.swift */; };
-		E2E7E1D7299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1D6299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift */; };
 		E2E7E1F0299FC72300A5C883 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1EF299FC72300A5C883 /* RequestManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,9 @@
 		E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		E23574E129BFE070007AAF93 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWithOffset.swift; sourceTree = "<group>"; };
+		E24278132A1AB1EF002C6B56 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
+		E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		E242781A2A1AB78F002C6B56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryListView.swift; sourceTree = "<group>"; };
 		E24B650229B6BA340058D84D /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
@@ -106,7 +113,6 @@
 		E2E7E1CA299FBFF300A5C883 /* iOS_RecyclingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingTests.swift; sourceTree = "<group>"; };
 		E2E7E1D0299FBFF300A5C883 /* iOS-RecyclingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-RecyclingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7E1D4299FBFF300A5C883 /* GroceryListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewTests.swift; sourceTree = "<group>"; };
-		E2E7E1D6299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E2E7E1EF299FC72300A5C883 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,10 +188,20 @@
 		E23574E329BFF1B2007AAF93 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */,
 				E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */,
 				E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		E24278122A1AB1D0002C6B56 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E242781B2A1AB78F002C6B56 /* Localizable.strings */,
+				E24278132A1AB1EF002C6B56 /* LocalizationKeys.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		E2C747292A19523600DEE7A2 /* Mocks */ = {
@@ -223,6 +239,7 @@
 		E2E7E1B8299FBFF200A5C883 /* iOS-Recycling */ = {
 			isa = PBXGroup;
 			children = (
+				E24278122A1AB1D0002C6B56 /* Localization */,
 				E2C747292A19523600DEE7A2 /* Mocks */,
 				E20FB27029C6911500AC0B51 /* Intents */,
 				E20FB1EC29C6321A00AC0B51 /* Supporting Files */,
@@ -259,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				E2E7E1D4299FBFF300A5C883 /* GroceryListViewTests.swift */,
-				E2E7E1D6299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift */,
 			);
 			path = "iOS-RecyclingUITests";
 			sourceTree = "<group>";
@@ -434,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20FB1E529C4CDEF00AC0B51 /* README.md in Resources */,
+				E24278192A1AB78F002C6B56 /* Localizable.strings in Resources */,
 				E2E7E1C1299FBFF300A5C883 /* Preview Assets.xcassets in Resources */,
 				E2E7E1BE299FBFF300A5C883 /* Assets.xcassets in Resources */,
 			);
@@ -481,9 +498,11 @@
 				E20FB27229C6911500AC0B51 /* AddItemToGroceryList.swift in Sources */,
 				E2322CE029C0D3240036F3FC /* EdgeInsets+Extensions.swift in Sources */,
 				E228BD0E2A17ADA9004F8E6D /* CategoriesResponse.swift in Sources */,
+				E24278182A1AB654002C6B56 /* AccessibilityIdentifiers.swift in Sources */,
 				E2CA00A429C3575D00B01E7B /* iOS-Recycling.xcdatamodeld in Sources */,
 				E24B650929B73F740058D84D /* RecipeListView.swift in Sources */,
 				E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */,
+				E24278142A1AB1EF002C6B56 /* LocalizationKeys.swift in Sources */,
 				E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */,
 				E2C7472D2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift in Sources */,
 				E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */,
@@ -507,8 +526,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E242781C2A1AB82A002C6B56 /* AccessibilityIdentifiers.swift in Sources */,
 				E2E7E1D5299FBFF300A5C883 /* GroceryListViewTests.swift in Sources */,
-				E2E7E1D7299FBFF300A5C883 /* iOS_RecyclingUITestsLaunchTests.swift in Sources */,
+				E242781D2A1AB8FA002C6B56 /* AppArguments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +546,17 @@
 			targetProxy = E2E7E1D1299FBFF300A5C883 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E242781B2A1AB78F002C6B56 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E242781A2A1AB78F002C6B56 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E2E7E1D8299FBFF300A5C883 /* Debug */ = {

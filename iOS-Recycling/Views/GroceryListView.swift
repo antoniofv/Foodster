@@ -100,7 +100,9 @@ struct GroceryListView: View {
 
                 }
                 .listStyle(.grouped)
-                .navigationBarTitle(Text("Groceries"))
+                .navigationBarTitle(
+                    Text(LocalizedStringKey(LocalizationKeys.GroceryListView.title))
+                )
                 .toolbarBackground(Color.green, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
@@ -116,16 +118,18 @@ struct GroceryListView: View {
                             Image(systemName: "plus")
                                 .foregroundColor(.white)
                         }
-                        .accessibilityIdentifier("addButton")
-                        .accessibilityHint(Text("Add a grocery item to the list"))
+                        .accessibilityIdentifier(AccessibilityIdentifiers.GroceryListView.addButton)
+                        .accessibilityHint(
+                            Text(LocalizedStringKey(LocalizationKeys.GroceryListView.Accessibility.addButtonHint))
+                        )
                     }
                 }
                 .overlay(Group {
                     // Empty list view
                     if groceryListViewModel.groceries.isEmpty {
                         VStack {
-                            Text("Add some items to the list!")
-                                .accessibilityIdentifier("emptyListText")
+                            Text(LocalizedStringKey(LocalizationKeys.GroceryListView.emptyListMessage))
+                                .accessibilityIdentifier(AccessibilityIdentifiers.GroceryListView.emptyListMessage)
                                 .font(.title2)
                                 .foregroundColor(Color(white: 0.4))
                         }

@@ -10,9 +10,11 @@ import Foundation
 
 public enum AppArguments: String {
 
-    case uiTests = "-uiTests"
+    case inMemoryDatabase = "-inMemoryDatabase"
     case networkOffline = "-networkOffline"
     case requestFail = "-requestFail"
+    case uiTests = "-uiTests"
+
 
 
     static func contains(_ argument: AppArguments) -> Bool {

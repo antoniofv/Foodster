@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  iOS-Recycling
+
+  Created by Antonio Fernandez Vega on 21/5/23.
+  
+*/
+
+
+/* Grocery list view */
+
+"groceryListView.accessibility.addButtonHint" = "Add a grocery item to the list";
+"groceryListView.title" = "Groceries";
+"groceryListView.emptyListMessage" = "Add some items to the list!";
