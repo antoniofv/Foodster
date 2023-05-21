@@ -91,6 +91,7 @@
 		E24278132A1AB1EF002C6B56 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		E242781A2A1AB78F002C6B56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E24278202A1AC5EF002C6B56 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryListView.swift; sourceTree = "<group>"; };
 		E24B650229B6BA340058D84D /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
@@ -552,6 +553,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E242781A2A1AB78F002C6B56 /* en */,
+				E24278202A1AC5EF002C6B56 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

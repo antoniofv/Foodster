@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  iOS-Recycling
+
+  Created by Antonio Fernandez Vega on 21/5/23.
+  
+*/
+
+
+/* Grocery list view */
+
+"groceryListView.accessibility.addButtonHint" = "Añade un producto a la lista";
+"groceryListView.title" = "Lista de la compra";
+"groceryListView.emptyListMessage" = "¡Añade algo a la lista!";
+
+
+/* Recipe category list view */
+
+"recipeCategoryListView.title" = "Recetas";
+
+
+/* Recipe details view */
+
+"recipeDetailsView.title" = "Receta";
+"recipeDetailsView.loadingMessage" = "Cargando...";
+"recipeDetailsView.ingredientsSection.title" = "Ingredientes";
+"recipeDetailsView.ingredientsSection.addToGroceryListButtonTitle" = "Añadir a la lista de la compra";
+"recipeDetailsView.instructionsSection.title" = "Instrucciones";
+"recipeDetailsView.instructionsSection.youtubeButtonTitle" = "Ver en YouTube";
