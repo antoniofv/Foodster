@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  Foodster
+
+  Created by Antonio Fernandez Vega on 21/5/23.
+  
+*/
+
+
+/* Grocery list view */
+
+"groceryListView.accessibility.addButtonHint" = "Añade un producto a la lista";
+"groceryListView.title" = "Lista de la compra";
+"groceryListView.emptyListMessage" = "¡Añade algo a la lista!";
+
+
+/* Recipe category list view */
+
+"recipeCategoryListView.title" = "Recetas";
+
+
+/* Recipe details view */
+
+"recipeDetailsView.title" = "Receta";
+"recipeDetailsView.loadingMessage" = "Cargando...";
+"recipeDetailsView.ingredientsSection.title" = "Ingredientes";
+"recipeDetailsView.ingredientsSection.addToGroceryListButtonTitle" = "Añadir a la lista de la compra";
+"recipeDetailsView.instructionsSection.title" = "Instrucciones";
+"recipeDetailsView.instructionsSection.youtubeButtonTitle" = "Ver en YouTube";
+
+
+/* INTENTS */
+
+/* AddItemToGroceryList intent */
+
+"AddItemToGroceryList.title" = "Añadir a la lista de la compra";
+"AddItemToGroceryList.description" = "Añade un elemento a la lista de la compra";
+"AddItemToGroceryList.parameter.item.requestValueDialog" = "Elemento que quieres añadir:";
+"AddItemToGroceryList.parameter.item.summary" = "Añadir ${item} a la lista de la compra.";
+"AddItemToGroceryList.parameter.item.dialog.prompt" = "¿Qué quieres añadir?";
+"AddItemToGroceryList.parameter.item.dialog.confirmation" = "Sólo para confirmarlo, ¿quieres añadir \"%@\"?";
+"AddItemToGroceryList.parameter.item.dialog.responseSuccess" = "Se añadió \"%@\" a tu lista de la compra.";
+
