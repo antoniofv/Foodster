@@ -29,6 +29,8 @@
 		E24278192A1AB78F002C6B56 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E242781B2A1AB78F002C6B56 /* Localizable.strings */; };
 		E242781C2A1AB82A002C6B56 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */; };
 		E242781D2A1AB8FA002C6B56 /* AppArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD1C2A17E145004F8E6D /* AppArguments.swift */; };
+		E24278232A1ACB73002C6B56 /* AppShortcuts.strings in Resources */ = {isa = PBXBuildFile; fileRef = E24278252A1ACB73002C6B56 /* AppShortcuts.strings */; };
+		E24278272A1ACD6C002C6B56 /* AppShortcutsLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278262A1ACD6C002C6B56 /* AppShortcutsLocalization.swift */; };
 		E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */; };
 		E24B650329B6BA340058D84D /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650229B6BA340058D84D /* TheMealDBAPI.swift */; };
 		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
@@ -92,6 +94,8 @@
 		E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		E242781A2A1AB78F002C6B56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E24278202A1AC5EF002C6B56 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E24278262A1ACD6C002C6B56 /* AppShortcutsLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcutsLocalization.swift; sourceTree = "<group>"; };
+		E24278282A1D63E6002C6B56 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AppShortcuts.strings; sourceTree = "<group>"; };
 		E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryListView.swift; sourceTree = "<group>"; };
 		E24B650229B6BA340058D84D /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				E242781B2A1AB78F002C6B56 /* Localizable.strings */,
 				E24278132A1AB1EF002C6B56 /* LocalizationKeys.swift */,
+				E24278252A1ACB73002C6B56 /* AppShortcuts.strings */,
+				E24278262A1ACD6C002C6B56 /* AppShortcutsLocalization.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -409,7 +415,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					E2E7E1B5299FBFF200A5C883 = {
 						CreatedOnToolsVersion = 14.2;
@@ -450,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24278232A1ACB73002C6B56 /* AppShortcuts.strings in Resources */,
 				E20FB1E529C4CDEF00AC0B51 /* README.md in Resources */,
 				E24278192A1AB78F002C6B56 /* Localizable.strings in Resources */,
 				E2E7E1C1299FBFF300A5C883 /* Preview Assets.xcassets in Resources */,
@@ -490,6 +497,7 @@
 				E2E7E1BA299FBFF200A5C883 /* iOS_RecyclingApp.swift in Sources */,
 				E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */,
 				E27AB45A2A1838220085C2F4 /* Assets.swift in Sources */,
+				E24278272A1ACD6C002C6B56 /* AppShortcutsLocalization.swift in Sources */,
 				E20FB27F29C7A69500AC0B51 /* AppDelegate.swift in Sources */,
 				E2C7472F2A19566800DEE7A2 /* MockRecipe.swift in Sources */,
 				E23574E729BFF3F4007AAF93 /* ScrollViewWithOffset.swift in Sources */,
@@ -558,6 +566,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		E24278252A1ACB73002C6B56 /* AppShortcuts.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E24278282A1D63E6002C6B56 /* es */,
+			);
+			name = AppShortcuts.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -565,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -625,6 +642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
