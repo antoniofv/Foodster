@@ -1,4 +1,4 @@
-# iOS-Recycling
+# Foodster
 
 This project's goal is to be used as my personal playground to help me get familiar with the changes made to the iOS and Swift ecosystem in the last years.
 
@@ -24,7 +24,7 @@ This project will also explore the modern iOS architecture patterns beyond the t
 
 ## The app
 
-The app has 2 main sections: the grocery list and the recipe book. The following screenshots give an approximate idea on how they look.
+The app has been localized to English and Spanish and it has 2 main sections: the grocery list and the recipe book. The following screenshots give an approximate idea on how they look.
 
 The recipe book's content is obtained from [TheMealDB API](https://www.themealdb.com/api.php).
 

@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Foodster
+
+  Created by Antonio Fernandez Vega on 23/5/23.
+  
+*/
+
+"NSSiriUsageDescription" = "Añadir elementos a tu lista de la compra";

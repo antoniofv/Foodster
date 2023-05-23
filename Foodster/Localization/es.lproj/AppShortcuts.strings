@@ -1,0 +1,16 @@
+/* 
+  AppShortcuts.strings
+  Foodster
+
+  Created by Antonio Fernandez Vega on 21/5/23.
+  
+*/
+
+/* AddItemToGroceryList shortcut phrases */
+
+"Add an item to ${applicationName}" = "Añadir un elemento a ${applicationName}";
+"Add item to ${applicationName}" = "Ańadir elemento a ${applicationName}";
+"Add to ${applicationName}" = "Añadir a ${applicationName}";
+"Add a product to ${applicationName}" = "Añadir un producto a ${applicationName}";
+"Add product to ${applicationName}" = "Añadir producto a ${applicationName}";
+"Add something to ${applicationName}" = "Añadir algo a ${applicationName}";
