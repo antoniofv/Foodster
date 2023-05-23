@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  iOS-Recycling
+
+  Created by Antonio Fernandez Vega on 21/5/23.
+  
+*/
+
+
+/* Grocery list view */
+
+"groceryListView.accessibility.addButtonHint" = "Add a grocery item to the list";
+"groceryListView.title" = "Groceries";
+"groceryListView.emptyListMessage" = "Add some items to the list!";
+
+
+/* Recipe category list view */
+
+"recipeCategoryListView.title" = "Recipes";
+
+
+/* Recipe details view */
+
+"recipeDetailsView.title" = "Recipe";
+"recipeDetailsView.loadingMessage" = "Loading...";
+"recipeDetailsView.ingredientsSection.title" = "Ingredients";
+"recipeDetailsView.ingredientsSection.addToGroceryListButtonTitle" = "Add ingredients to the grocery list";
+"recipeDetailsView.instructionsSection.title" = "Instructions";
+"recipeDetailsView.instructionsSection.youtubeButtonTitle" = "Watch on YouTube";
+
+
+/* INTENTS / APP SHORTCUTS */
+
+/* AddItemToGroceryList intent */
+
+"AddItemToGroceryList.title" = "Add to grocery list";
+"AddItemToGroceryList.description" = "Add an item to the grocery list";
+"AddItemToGroceryList.parameter.item.requestValueDialog" = "Item you want to add:";
+"AddItemToGroceryList.parameter.item.summary" = "Add ${item} to the grocery list.";
+"AddItemToGroceryList.parameter.item.dialog.prompt" = "What do you want to add?";
+"AddItemToGroceryList.parameter.item.dialog.confirmation" = "Just to confirm, you wanted to add \"%@\"?";
+"AddItemToGroceryList.parameter.item.dialog.responseSuccess" = "Added \"%@\" to your grocery list.";

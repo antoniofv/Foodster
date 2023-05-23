@@ -14,14 +14,35 @@ struct AddItemToGroceryList: AppIntent {
 
     static let intentClassName = "AddItemToGroceryListIntent"
 
-    static var title: LocalizedStringResource = "Add to grocery list"
-    static var description = IntentDescription("Add an item to the grocery list")
 
-    @Parameter(title: "item you want to add")
+    static var title = AppShortcutsLocalization.getStringResource(
+        AppShortcutsLocalization.Keys.AddItemToGroceryList.title
+    )
+
+    static var description = IntentDescription(
+        AppShortcutsLocalization.getStringResource(
+            AppShortcutsLocalization.Keys.AddItemToGroceryList.description
+        )
+    )
+
+
+    @Parameter(
+        title: "item",
+        requestValueDialog: IntentDialog(
+            AppShortcutsLocalization.getStringResource(
+                AppShortcutsLocalization.Keys.AddItemToGroceryList.Parameter.Item.requestValueDialog
+            )
+        )
+    )
     var item: String
 
     static var parameterSummary: some ParameterSummary {
-        Summary("Adds \(\.$item) to the grocery list")
+        /*
+         * For some reason, using a `ParameterSummaryString` with the constant value
+         * from `AppShortcutsLocalization` does not work as expected. The key is hardcoded
+         * here and the translation is contained in the `Localizable.strings` file.
+         */
+        Summary("AddItemToGroceryList.parameter.item.summary")
     }
 
 
@@ -47,22 +68,31 @@ struct AddItemToGroceryList: AppIntent {
 fileprivate extension IntentDialog {
 
     static var itemParameterPrompt: Self {
-        "What do you want to add?"
+        IntentDialog(
+            AppShortcutsLocalization.getStringResource(
+                AppShortcutsLocalization.Keys.AddItemToGroceryList.Parameter.Item.Dialog.prompt
+            )
+        )
     }
 
     static func itemParameterConfirmation(item: String) -> Self {
-        "Just to confirm, you wanted ‘\(item)’?"
+        let formatString = AppShortcutsLocalization.getString(
+            AppShortcutsLocalization.Keys.AddItemToGroceryList.Parameter.Item.Dialog.confirmation
+        )
+        return IntentDialog(stringLiteral: String(format: formatString, item))
     }
 
     static func responseSuccess(item: String) -> Self {
-        "Added \"\(item)\" to your grocery list."
+        let formatString = AppShortcutsLocalization.getString(
+            AppShortcutsLocalization.Keys.AddItemToGroceryList.Parameter.Item.Dialog.responseSuccess
+        )
+        return IntentDialog(stringLiteral: String(format: formatString, item))
     }
 
 }
 
 
 @available(iOS 16.0, *)
-/// The `AppShortcutsProvider`.
 struct GlobalShortcutsProvider: AppShortcutsProvider {
 
     static var shortcutTileColor: ShortcutTileColor = .navy

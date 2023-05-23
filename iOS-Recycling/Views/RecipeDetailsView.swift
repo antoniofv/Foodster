@@ -85,7 +85,7 @@ struct RecipeDetailsView: View {
             if loadedRecipe == nil {
                 Group {
                     VStack {
-                        Text("Loading...")
+                        Text(LocalizedStringKey(LocalizationKeys.RecipeDetailsView.loadingMessage))
                             .font(.title2)
                             .bold()
                     }
@@ -101,7 +101,10 @@ struct RecipeDetailsView: View {
                 print(error)
             }
         }
-        .navigationBarTitle("Recipe", displayMode: .inline)
+        .navigationBarTitle(
+            LocalizedStringKey(LocalizationKeys.RecipeDetailsView.title),
+            displayMode: .inline
+        )
         .toolbarBackground(Color.orange, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
 
@@ -115,7 +118,7 @@ extension RecipeDetailsView {
     private func IngredientListView() -> some View {
         VStack(alignment: .leading) {
 
-            Text("Ingredients")
+            Text(LocalizedStringKey(LocalizationKeys.RecipeDetailsView.IngredientsSection.title))
                 .font(.title3)
                 .bold()
 
@@ -138,7 +141,7 @@ extension RecipeDetailsView {
 
             Button(action: addIngredientsToGroceryList) {
                 Image(systemName: "cart.fill")
-                Text("Add ingredients to the grocery list")
+                Text(LocalizedStringKey(LocalizationKeys.RecipeDetailsView.IngredientsSection.addToGroceryListButtonTitle))
             }
             .font(.callout)
             .bold()
@@ -151,7 +154,7 @@ extension RecipeDetailsView {
     private func InstructionsView() -> some View {
         VStack(alignment: .leading, spacing: 10) {
 
-            Text("Instructions")
+            Text(LocalizedStringKey(LocalizationKeys.RecipeDetailsView.InstructionsSection.title))
                 .font(.title3)
                 .bold()
 
@@ -159,7 +162,9 @@ extension RecipeDetailsView {
                 Link(destination: URL(string: youtubeLink)!) {
                     HStack {
                         Image(systemName: "play.rectangle.fill")
-                        Text("Watch on YouTube").font(.callout).bold()
+                        Text(LocalizedStringKey(LocalizationKeys.RecipeDetailsView.InstructionsSection.youtubeButtonTitle))
+                            .font(.callout)
+                            .bold()
                     }
                 }
                 .buttonStyle(.bordered)

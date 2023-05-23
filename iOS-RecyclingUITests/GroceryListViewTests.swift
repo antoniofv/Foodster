@@ -14,20 +14,20 @@ final class GroceryListViewTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = true
 
-        app.launchArguments = ["-inMemoryDatabase"]
+        app.launchArguments = AppArguments.buildArguments([.inMemoryDatabase])
         app.launch()
     }
     
     // MARK: - Tests
 
     func testEmptyGroceryList() throws {
-        let emptyListText = app.staticTexts["emptyListText"]
+        let emptyListText = app.staticTexts[AccessibilityIdentifiers.GroceryListView.emptyListMessage]
         XCTAssert(emptyListText.exists)
     }
     
     func testAddGroceryListItem() throws {
         // Check if the add button is in the toolbar
-        let addButton = app.buttons["addButton"]
+        let addButton = app.buttons[AccessibilityIdentifiers.GroceryListView.addButton]
         XCTAssert(addButton.exists)
         XCTAssert(addButton.isEnabled)
         
@@ -52,7 +52,7 @@ final class GroceryListViewTests: XCTestCase {
     
     func testMoveGroceryListItem() throws {
         // Check if the add button is in the toolbar
-        let addButton = app.buttons["addButton"]
+        let addButton = app.buttons[AccessibilityIdentifiers.GroceryListView.addButton]
         XCTAssert(addButton.exists)
         XCTAssert(addButton.isEnabled)
         
@@ -93,7 +93,7 @@ final class GroceryListViewTests: XCTestCase {
         XCTAssert(app.cells.count == 0)
 
         // Add a new grocery item to the list
-        app.buttons["addButton"].tap()
+        app.buttons[AccessibilityIdentifiers.GroceryListView.addButton].tap()
 
         let row = app.cells.element
         let textField = row.textFields.element
@@ -111,7 +111,7 @@ final class GroceryListViewTests: XCTestCase {
         // Check that the list is empty and the empty list text is displayed.
         XCTAssert(!app.textFields["Banana"].exists)
         XCTAssert(app.cells.count == 0)
-        XCTAssert(app.staticTexts["emptyListText"].exists)
+        XCTAssert(app.staticTexts[AccessibilityIdentifiers.GroceryListView.emptyListMessage].exists)
     }
 
 }

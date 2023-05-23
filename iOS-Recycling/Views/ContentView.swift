@@ -30,13 +30,19 @@ struct ContentView: View {
                     viewModel: GroceryListViewModel(context: dataContext)
                 )
                 .tabItem {
-                    Label("Groceries", systemImage: "cart")
+                    Label(
+                        LocalizedStringKey(LocalizationKeys.GroceryListView.title),
+                        systemImage: "cart"
+                    )
                 }
                 .tag(TabIdentifier.groceries)
 
                 RecipeCategoryListView(api: api, context: dataContext)
                     .tabItem {
-                        Label("Recipes", systemImage: "fork.knife")
+                        Label(
+                            LocalizedStringKey(LocalizationKeys.RecipeCategoryListView.title),
+                            systemImage: "fork.knife"
+                        )
                     }
                     .tag(TabIdentifier.recipes)
             }
