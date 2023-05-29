@@ -32,6 +32,49 @@
 		E24278232A1ACB73002C6B56 /* AppShortcuts.strings in Resources */ = {isa = PBXBuildFile; fileRef = E24278252A1ACB73002C6B56 /* AppShortcuts.strings */; };
 		E24278272A1ACD6C002C6B56 /* AppShortcutsLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278262A1ACD6C002C6B56 /* AppShortcutsLocalization.swift */; };
 		E242782B2A1D6B94002C6B56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E242782D2A1D6B94002C6B56 /* InfoPlist.strings */; };
+		E242D3882A24D99F0012A401 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1EF299FC72300A5C883 /* RequestManager.swift */; };
+		E242D3892A24D99F0012A401 /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650229B6BA340058D84D /* TheMealDBAPI.swift */; };
+		E242D38A2A24D99F0012A401 /* GroceryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFE29A83F0F00511180 /* GroceryListItem.swift */; };
+		E242D38B2A24D99F0012A401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1BB299FBFF200A5C883 /* ContentView.swift */; };
+		E242D38C2A24D99F0012A401 /* AppArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD1C2A17E145004F8E6D /* AppArguments.swift */; };
+		E242D38D2A24D99F0012A401 /* RecipeDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD112A17B0E8004F8E6D /* RecipeDetailResponse.swift */; };
+		E242D38E2A24D99F0012A401 /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650629B6BEC20058D84D /* RecipeListViewModel.swift */; };
+		E242D38F2A24D99F0012A401 /* RecipeDetailResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD1A2A17D583004F8E6D /* RecipeDetailResource.swift */; };
+		E242D3902A24D99F0012A401 /* GroceryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFC29A83E7400511180 /* GroceryListViewModel.swift */; };
+		E242D3922A24D99F0012A401 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2155AFA29A83DC800511180 /* GroceryListView.swift */; };
+		E242D3932A24D99F0012A401 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AB4592A1838220085C2F4 /* Assets.swift */; };
+		E242D3942A24D99F0012A401 /* AppShortcutsLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278262A1ACD6C002C6B56 /* AppShortcutsLocalization.swift */; };
+		E242D3952A24D99F0012A401 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FB27E29C7A69500AC0B51 /* AppDelegate.swift */; };
+		E242D3962A24D99F0012A401 /* MockRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472E2A19566800DEE7A2 /* MockRecipe.swift */; };
+		E242D3972A24D99F0012A401 /* ScrollViewWithOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23574E629BFF3F4007AAF93 /* ScrollViewWithOffset.swift */; };
+		E242D3982A24D99F0012A401 /* RecipesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD182A17D0C4004F8E6D /* RecipesResource.swift */; };
+		E242D3992A24D99F0012A401 /* RecipesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD0F2A17AF11004F8E6D /* RecipesResponse.swift */; };
+		E242D39A2A24D99F0012A401 /* CategoriesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD162A17CFAA004F8E6D /* CategoriesResource.swift */; };
+		E242D39B2A24D99F0012A401 /* AddItemToGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FB27129C6911500AC0B51 /* AddItemToGroceryList.swift */; };
+		E242D39C2A24D99F0012A401 /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2322CDF29C0D3240036F3FC /* EdgeInsets+Extensions.swift */; };
+		E242D39D2A24D99F0012A401 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD0D2A17ADA9004F8E6D /* CategoriesResponse.swift */; };
+		E242D39E2A24D99F0012A401 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278172A1AB654002C6B56 /* AccessibilityIdentifiers.swift */; };
+		E242D39F2A24D99F0012A401 /* Foodster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2CA009129C21F7C00B01E7B /* Foodster.xcdatamodeld */; };
+		E242D3A02A24D99F0012A401 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650829B73F740058D84D /* RecipeListView.swift */; };
+		E242D3A12A24D99F0012A401 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD669829BA510400845741 /* RecipeDetailsView.swift */; };
+		E242D3A22A24D99F0012A401 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24278132A1AB1EF002C6B56 /* LocalizationKeys.swift */; };
+		E242D3A32A24D99F0012A401 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
+		E242D3A42A24D99F0012A401 /* MockTheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472C2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift */; };
+		E242D3A52A24D99F0012A401 /* RecipeCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */; };
+		E242D3A62A24D99F0012A401 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23574E129BFE070007AAF93 /* Recipe.swift */; };
+		E242D3A72A24D99F0012A401 /* DataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */; };
+		E242D3A82A24D99F0012A401 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228BD142A17CD5A004F8E6D /* APIResource.swift */; };
+		E242D3A92A24D99F0012A401 /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EDF129AA923500C3696D /* GroceryListCell.swift */; };
+		E242D3AA2A24D99F0012A401 /* MockRecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472A2A1953FC00DEE7A2 /* MockRecipeCategory.swift */; };
+		E242D3AD2A24D99F0012A401 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E242782D2A1D6B94002C6B56 /* InfoPlist.strings */; };
+		E242D3AE2A24D99F0012A401 /* AppShortcuts.strings in Resources */ = {isa = PBXBuildFile; fileRef = E24278252A1ACB73002C6B56 /* AppShortcuts.strings */; };
+		E242D3AF2A24D99F0012A401 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E20FB1E429C4CDEF00AC0B51 /* README.md */; };
+		E242D3B02A24D99F0012A401 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E242781B2A1AB78F002C6B56 /* Localizable.strings */; };
+		E242D3B12A24D99F0012A401 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E7E1C0299FBFF300A5C883 /* Preview Assets.xcassets */; };
+		E242D3B22A24D99F0012A401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E7E1BD299FBFF300A5C883 /* Assets.xcassets */; };
+		E242D3BA2A24DA2D0012A401 /* FoodtestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E242D3B92A24DA2D0012A401 /* FoodtestsApp.swift */; };
+		E242D3BB2A24DA8C0012A401 /* FoodsterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1B9299FBFF200A5C883 /* FoodsterApp.swift */; };
+		E242D3C12A24E0D00012A401 /* MockTheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472C2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift */; };
 		E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */; };
 		E24B650329B6BA340058D84D /* TheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650229B6BA340058D84D /* TheMealDBAPI.swift */; };
 		E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650429B6BA6D0058D84D /* RecipeCategory.swift */; };
@@ -39,22 +82,34 @@
 		E24B650929B73F740058D84D /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B650829B73F740058D84D /* RecipeListView.swift */; };
 		E27AB45A2A1838220085C2F4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27AB4592A1838220085C2F4 /* Assets.swift */; };
 		E2C7472B2A1953FC00DEE7A2 /* MockRecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472A2A1953FC00DEE7A2 /* MockRecipeCategory.swift */; };
-		E2C7472D2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472C2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift */; };
 		E2C7472F2A19566800DEE7A2 /* MockRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7472E2A19566800DEE7A2 /* MockRecipe.swift */; };
 		E2CA009029C21DC500B01E7B /* DataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA008F29C21DC500B01E7B /* DataStoreProvider.swift */; };
 		E2CA00A429C3575D00B01E7B /* Foodster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2CA009129C21F7C00B01E7B /* Foodster.xcdatamodeld */; };
 		E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CD669829BA510400845741 /* RecipeDetailsView.swift */; };
 		E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EDF129AA923500C3696D /* GroceryListCell.swift */; };
-		E2E7E1BA299FBFF200A5C883 /* FoodsterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1B9299FBFF200A5C883 /* FoodsterApp.swift */; };
 		E2E7E1BC299FBFF200A5C883 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1BB299FBFF200A5C883 /* ContentView.swift */; };
 		E2E7E1BE299FBFF300A5C883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E7E1BD299FBFF300A5C883 /* Assets.xcassets */; };
 		E2E7E1C1299FBFF300A5C883 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E7E1C0299FBFF300A5C883 /* Preview Assets.xcassets */; };
-		E2E7E1CB299FBFF300A5C883 /* iOS_RecyclingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1CA299FBFF300A5C883 /* iOS_RecyclingTests.swift */; };
+		E2E7E1CB299FBFF300A5C883 /* FoodsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1CA299FBFF300A5C883 /* FoodsterTests.swift */; };
 		E2E7E1D5299FBFF300A5C883 /* GroceryListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1D4299FBFF300A5C883 /* GroceryListViewTests.swift */; };
 		E2E7E1F0299FC72300A5C883 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7E1EF299FC72300A5C883 /* RequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E242D3BD2A24DCA40012A401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2E7E1AE299FBFF200A5C883 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E242D3862A24D99F0012A401;
+			remoteInfo = Foodtests;
+		};
+		E242D3BF2A24DCA90012A401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2E7E1AE299FBFF200A5C883 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E242D3862A24D99F0012A401;
+			remoteInfo = Foodtests;
+		};
 		E2E7E1C7299FBFF300A5C883 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E2E7E1AE299FBFF200A5C883 /* Project object */;
@@ -98,6 +153,8 @@
 		E24278262A1ACD6C002C6B56 /* AppShortcutsLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcutsLocalization.swift; sourceTree = "<group>"; };
 		E24278282A1D63E6002C6B56 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AppShortcuts.strings; sourceTree = "<group>"; };
 		E242782C2A1D6B94002C6B56 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E242D3B62A24D99F0012A401 /* Foodtests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodtests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E242D3B92A24DA2D0012A401 /* FoodtestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodtestsApp.swift; sourceTree = "<group>"; };
 		E24B650029B6B9F00058D84D /* RecipeCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryListView.swift; sourceTree = "<group>"; };
 		E24B650229B6BA340058D84D /* TheMealDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBAPI.swift; sourceTree = "<group>"; };
 		E24B650429B6BA6D0058D84D /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
@@ -117,13 +174,20 @@
 		E2E7E1BD299FBFF300A5C883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2E7E1C0299FBFF300A5C883 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2E7E1C6299FBFF300A5C883 /* FoodsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2E7E1CA299FBFF300A5C883 /* iOS_RecyclingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RecyclingTests.swift; sourceTree = "<group>"; };
+		E2E7E1CA299FBFF300A5C883 /* FoodsterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsterTests.swift; sourceTree = "<group>"; };
 		E2E7E1D0299FBFF300A5C883 /* FoodsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7E1D4299FBFF300A5C883 /* GroceryListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewTests.swift; sourceTree = "<group>"; };
 		E2E7E1EF299FC72300A5C883 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E242D3AB2A24D99F0012A401 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2E7E1B3299FBFF200A5C883 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +278,22 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		E242D3B72A24D9FB0012A401 /* Foodtests */ = {
+			isa = PBXGroup;
+			children = (
+				E242D3B82A24DA140012A401 /* Controllers */,
+			);
+			path = Foodtests;
+			sourceTree = "<group>";
+		};
+		E242D3B82A24DA140012A401 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E242D3B92A24DA2D0012A401 /* FoodtestsApp.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E2C747292A19523600DEE7A2 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +309,7 @@
 			children = (
 				E20FB1E429C4CDEF00AC0B51 /* README.md */,
 				E2E7E1B8299FBFF200A5C883 /* Foodster */,
+				E242D3B72A24D9FB0012A401 /* Foodtests */,
 				E2E7E1C9299FBFF300A5C883 /* FoodsterTests */,
 				E2E7E1D3299FBFF300A5C883 /* FoodsterUITests */,
 				E20FB1F429C6434800AC0B51 /* Frameworks */,
@@ -242,6 +323,7 @@
 				E2E7E1B6299FBFF200A5C883 /* Foodster.app */,
 				E2E7E1C6299FBFF300A5C883 /* FoodsterTests.xctest */,
 				E2E7E1D0299FBFF300A5C883 /* FoodsterUITests.xctest */,
+				E242D3B62A24D99F0012A401 /* Foodtests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,17 +331,17 @@
 		E2E7E1B8299FBFF200A5C883 /* Foodster */ = {
 			isa = PBXGroup;
 			children = (
-				E24278122A1AB1D0002C6B56 /* Localization */,
-				E2C747292A19523600DEE7A2 /* Mocks */,
-				E20FB27029C6911500AC0B51 /* Intents */,
-				E20FB1EC29C6321A00AC0B51 /* Supporting Files */,
-				E23574E329BFF1B2007AAF93 /* Misc */,
-				E2E7E1EE299FC6F800A5C883 /* Tools */,
 				E2E7E1ED299FC6E300A5C883 /* API */,
 				E2E7E1E8299FC0A000A5C883 /* Controllers */,
+				E20FB27029C6911500AC0B51 /* Intents */,
+				E24278122A1AB1D0002C6B56 /* Localization */,
+				E23574E329BFF1B2007AAF93 /* Misc */,
+				E2C747292A19523600DEE7A2 /* Mocks */,
+				E2E7E1E3299FC02C00A5C883 /* Models */,
+				E20FB1EC29C6321A00AC0B51 /* Supporting Files */,
+				E2E7E1EE299FC6F800A5C883 /* Tools */,
 				E2E7E1E6299FC05100A5C883 /* ViewModels */,
 				E2E7E1E5299FC04400A5C883 /* Views */,
-				E2E7E1E3299FC02C00A5C883 /* Models */,
 				E2E7E1BD299FBFF300A5C883 /* Assets.xcassets */,
 				E2E7E1BF299FBFF300A5C883 /* Preview Content */,
 			);
@@ -277,7 +359,7 @@
 		E2E7E1C9299FBFF300A5C883 /* FoodsterTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2E7E1CA299FBFF300A5C883 /* iOS_RecyclingTests.swift */,
+				E2E7E1CA299FBFF300A5C883 /* FoodsterTests.swift */,
 			);
 			path = FoodsterTests;
 			sourceTree = "<group>";
@@ -326,8 +408,8 @@
 		E2E7E1E8299FC0A000A5C883 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E2E7E1B9299FBFF200A5C883 /* FoodsterApp.swift */,
 				E20FB27E29C7A69500AC0B51 /* AppDelegate.swift */,
+				E2E7E1B9299FBFF200A5C883 /* FoodsterApp.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,8 +419,8 @@
 			children = (
 				E228BD132A17CD41004F8E6D /* Resources */,
 				E228BD0C2A17AD78004F8E6D /* Responses */,
-				E24B650229B6BA340058D84D /* TheMealDBAPI.swift */,
 				E228BD142A17CD5A004F8E6D /* APIResource.swift */,
+				E24B650229B6BA340058D84D /* TheMealDBAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -357,6 +439,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E242D3862A24D99F0012A401 /* Foodtests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E242D3B32A24D99F0012A401 /* Build configuration list for PBXNativeTarget "Foodtests" */;
+			buildPhases = (
+				E242D3872A24D99F0012A401 /* Sources */,
+				E242D3AB2A24D99F0012A401 /* Frameworks */,
+				E242D3AC2A24D99F0012A401 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Foodtests;
+			productName = "iOS-Recycling";
+			productReference = E242D3B62A24D99F0012A401 /* Foodtests.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E2E7E1B5299FBFF200A5C883 /* Foodster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2E7E1DA299FBFF300A5C883 /* Build configuration list for PBXNativeTarget "Foodster" */;
@@ -386,6 +485,7 @@
 			);
 			dependencies = (
 				E2E7E1C8299FBFF300A5C883 /* PBXTargetDependency */,
+				E242D3BE2A24DCA40012A401 /* PBXTargetDependency */,
 			);
 			name = FoodsterTests;
 			productName = "iOS-RecyclingTests";
@@ -404,6 +504,7 @@
 			);
 			dependencies = (
 				E2E7E1D2299FBFF300A5C883 /* PBXTargetDependency */,
+				E242D3C02A24DCA90012A401 /* PBXTargetDependency */,
 			);
 			name = FoodsterUITests;
 			productName = "iOS-RecyclingUITests";
@@ -425,11 +526,11 @@
 					};
 					E2E7E1C5299FBFF300A5C883 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = E2E7E1B5299FBFF200A5C883;
+						TestTargetID = E242D3862A24D99F0012A401;
 					};
 					E2E7E1CF299FBFF300A5C883 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = E2E7E1B5299FBFF200A5C883;
+						TestTargetID = E242D3862A24D99F0012A401;
 					};
 				};
 			};
@@ -448,6 +549,7 @@
 			projectRoot = "";
 			targets = (
 				E2E7E1B5299FBFF200A5C883 /* Foodster */,
+				E242D3862A24D99F0012A401 /* Foodtests */,
 				E2E7E1C5299FBFF300A5C883 /* FoodsterTests */,
 				E2E7E1CF299FBFF300A5C883 /* FoodsterUITests */,
 			);
@@ -455,6 +557,19 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E242D3AC2A24D99F0012A401 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E242D3AD2A24D99F0012A401 /* InfoPlist.strings in Resources */,
+				E242D3AE2A24D99F0012A401 /* AppShortcuts.strings in Resources */,
+				E242D3AF2A24D99F0012A401 /* README.md in Resources */,
+				E242D3B02A24D99F0012A401 /* Localizable.strings in Resources */,
+				E242D3B12A24D99F0012A401 /* Preview Assets.xcassets in Resources */,
+				E242D3B22A24D99F0012A401 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2E7E1B4299FBFF200A5C883 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +600,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E242D3872A24D99F0012A401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E242D3882A24D99F0012A401 /* RequestManager.swift in Sources */,
+				E242D3892A24D99F0012A401 /* TheMealDBAPI.swift in Sources */,
+				E242D38A2A24D99F0012A401 /* GroceryListItem.swift in Sources */,
+				E242D38B2A24D99F0012A401 /* ContentView.swift in Sources */,
+				E242D38C2A24D99F0012A401 /* AppArguments.swift in Sources */,
+				E242D38D2A24D99F0012A401 /* RecipeDetailResponse.swift in Sources */,
+				E242D38E2A24D99F0012A401 /* RecipeListViewModel.swift in Sources */,
+				E242D38F2A24D99F0012A401 /* RecipeDetailResource.swift in Sources */,
+				E242D3902A24D99F0012A401 /* GroceryListViewModel.swift in Sources */,
+				E242D3922A24D99F0012A401 /* GroceryListView.swift in Sources */,
+				E242D3932A24D99F0012A401 /* Assets.swift in Sources */,
+				E242D3942A24D99F0012A401 /* AppShortcutsLocalization.swift in Sources */,
+				E242D3952A24D99F0012A401 /* AppDelegate.swift in Sources */,
+				E242D3962A24D99F0012A401 /* MockRecipe.swift in Sources */,
+				E242D3972A24D99F0012A401 /* ScrollViewWithOffset.swift in Sources */,
+				E242D3982A24D99F0012A401 /* RecipesResource.swift in Sources */,
+				E242D3992A24D99F0012A401 /* RecipesResponse.swift in Sources */,
+				E242D39A2A24D99F0012A401 /* CategoriesResource.swift in Sources */,
+				E242D39B2A24D99F0012A401 /* AddItemToGroceryList.swift in Sources */,
+				E242D39C2A24D99F0012A401 /* EdgeInsets+Extensions.swift in Sources */,
+				E242D3BA2A24DA2D0012A401 /* FoodtestsApp.swift in Sources */,
+				E242D39D2A24D99F0012A401 /* CategoriesResponse.swift in Sources */,
+				E242D39E2A24D99F0012A401 /* AccessibilityIdentifiers.swift in Sources */,
+				E242D39F2A24D99F0012A401 /* Foodster.xcdatamodeld in Sources */,
+				E242D3A02A24D99F0012A401 /* RecipeListView.swift in Sources */,
+				E242D3A12A24D99F0012A401 /* RecipeDetailsView.swift in Sources */,
+				E242D3A22A24D99F0012A401 /* LocalizationKeys.swift in Sources */,
+				E242D3A32A24D99F0012A401 /* RecipeCategory.swift in Sources */,
+				E242D3A42A24D99F0012A401 /* MockTheMealDBAPI.swift in Sources */,
+				E242D3A52A24D99F0012A401 /* RecipeCategoryListView.swift in Sources */,
+				E242D3A62A24D99F0012A401 /* Recipe.swift in Sources */,
+				E242D3A72A24D99F0012A401 /* DataStoreProvider.swift in Sources */,
+				E242D3A82A24D99F0012A401 /* APIResource.swift in Sources */,
+				E242D3A92A24D99F0012A401 /* GroceryListCell.swift in Sources */,
+				E242D3AA2A24D99F0012A401 /* MockRecipeCategory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2E7E1B2299FBFF200A5C883 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,7 +655,6 @@
 				E24B650729B6BEC20058D84D /* RecipeListViewModel.swift in Sources */,
 				E228BD1B2A17D583004F8E6D /* RecipeDetailResource.swift in Sources */,
 				E2155AFD29A83E7400511180 /* GroceryListViewModel.swift in Sources */,
-				E2E7E1BA299FBFF200A5C883 /* FoodsterApp.swift in Sources */,
 				E2155AFB29A83DC800511180 /* GroceryListView.swift in Sources */,
 				E27AB45A2A1838220085C2F4 /* Assets.swift in Sources */,
 				E24278272A1ACD6C002C6B56 /* AppShortcutsLocalization.swift in Sources */,
@@ -517,11 +673,12 @@
 				E2CD669929BA510400845741 /* RecipeDetailsView.swift in Sources */,
 				E24278142A1AB1EF002C6B56 /* LocalizationKeys.swift in Sources */,
 				E24B650529B6BA6D0058D84D /* RecipeCategory.swift in Sources */,
-				E2C7472D2A1955FE00DEE7A2 /* MockTheMealDBAPI.swift in Sources */,
+				E242D3BB2A24DA8C0012A401 /* FoodsterApp.swift in Sources */,
 				E24B650129B6B9F00058D84D /* RecipeCategoryListView.swift in Sources */,
 				E23574E229BFE070007AAF93 /* Recipe.swift in Sources */,
 				E2CA009029C21DC500B01E7B /* DataStoreProvider.swift in Sources */,
 				E228BD152A17CD5A004F8E6D /* APIResource.swift in Sources */,
+				E242D3C12A24E0D00012A401 /* MockTheMealDBAPI.swift in Sources */,
 				E2D0EDF229AA923500C3696D /* GroceryListCell.swift in Sources */,
 				E2C7472B2A1953FC00DEE7A2 /* MockRecipeCategory.swift in Sources */,
 			);
@@ -531,7 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2E7E1CB299FBFF300A5C883 /* iOS_RecyclingTests.swift in Sources */,
+				E2E7E1CB299FBFF300A5C883 /* FoodsterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +705,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E242D3BE2A24DCA40012A401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E242D3862A24D99F0012A401 /* Foodtests */;
+			targetProxy = E242D3BD2A24DCA40012A401 /* PBXContainerItemProxy */;
+		};
+		E242D3C02A24DCA90012A401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E242D3862A24D99F0012A401 /* Foodtests */;
+			targetProxy = E242D3BF2A24DCA90012A401 /* PBXContainerItemProxy */;
+		};
 		E2E7E1C8299FBFF300A5C883 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E2E7E1B5299FBFF200A5C883 /* Foodster */;
@@ -589,6 +756,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E242D3B42A24D99F0012A401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Foodster/Supporting Files/Foodster.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Foodster/Preview Content\"";
+				DEVELOPMENT_TEAM = KC9WE3YL5H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Add items to your grocery list";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antoniofernandez.Foodtests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E242D3B52A24D99F0012A401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Foodster/Supporting Files/Foodster.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Foodster/Preview Content\"";
+				DEVELOPMENT_TEAM = KC9WE3YL5H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Add items to your grocery list";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antoniofernandez.Foodtests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E2E7E1D8299FBFF300A5C883 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -781,14 +1016,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoniofernandez.FoodsterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foodster.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodster";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foodtests.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodtests";
 			};
 			name = Debug;
 		};
@@ -800,14 +1034,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoniofernandez.FoodsterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foodster.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodster";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foodtests.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodtests";
 			};
 			name = Release;
 		};
@@ -824,7 +1057,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Foodster;
+				TEST_TARGET_NAME = Foodtests;
 			};
 			name = Debug;
 		};
@@ -841,13 +1074,22 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Foodster;
+				TEST_TARGET_NAME = Foodtests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E242D3B32A24D99F0012A401 /* Build configuration list for PBXNativeTarget "Foodtests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E242D3B42A24D99F0012A401 /* Debug */,
+				E242D3B52A24D99F0012A401 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E2E7E1B1299FBFF200A5C883 /* Build configuration list for PBXProject "Foodster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

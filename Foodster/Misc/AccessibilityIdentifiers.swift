@@ -13,6 +13,7 @@ public enum AccessibilityIdentifiers {
     enum GroceryListView {
 
         static let addButton = "groceryListView.addButton"
+        static let dismissalArea = "groceryListView.dismissalArea"
         static let emptyListMessage = "groceryListView.emptyListMessage"
 
     }

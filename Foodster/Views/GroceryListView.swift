@@ -160,6 +160,7 @@ struct GroceryListView: View {
             Color.clear
         }
         .id("dismissal-area")
+        .accessibilityIdentifier(AccessibilityIdentifiers.GroceryListView.dismissalArea)
         .frame(height: max(0, proxy.size.height - listHeight - 30))
         .listRowInsets(.zero)
         .listRowSeparator(.hidden)

@@ -7,6 +7,7 @@
 
 import XCTest
 
+
 final class GroceryListViewTests: XCTestCase {
     
     let app = XCUIApplication()
@@ -49,6 +50,25 @@ final class GroceryListViewTests: XCTestCase {
         
         XCTAssert(app.textFields["Bananas"].exists)
     }
+
+    func testDismissalArea() {
+        // Check that there are now rows in the table
+        XCTAssertEqual(app.cells.count, 0)
+
+        // Add a new grocery item to the list
+        app.buttons[AccessibilityIdentifiers.GroceryListView.addButton].tap()
+
+        let row = app.cells.element
+        let textField = row.textFields.element
+        textField.typeText("Banana")
+
+        // Tap on the dismissal area.
+        app.otherElements[AccessibilityIdentifiers.GroceryListView.dismissalArea].tap()
+
+        XCTAssert(app.textFields["Banana"].exists)
+        XCTAssertEqual(app.cells.count, 1)
+    }
+
     
     func testMoveGroceryListItem() throws {
         // Check if the add button is in the toolbar
@@ -58,12 +78,12 @@ final class GroceryListViewTests: XCTestCase {
         
         // Check that there are now rows in the table
         XCTAssert(app.cells.count == 0)
-        
+
+        // Add a new grocery item to the list
+        addButton.tap()
+
         // Add some items to the list.
         for (index, itemName) in ["Bananas", "Pears", "Apples"].enumerated() {
-            // Add a new grocery item to the list
-            addButton.tap()
-            
             let tableRow = app.cells.element(boundBy: index)
             let rowTextField = tableRow.textFields.element
             rowTextField.typeText(itemName)
@@ -98,8 +118,10 @@ final class GroceryListViewTests: XCTestCase {
         let row = app.cells.element
         let textField = row.textFields.element
         textField.typeText("Banana")
-        app.keyboards.buttons["Return"].tap()
-        
+
+        // Tap on the dismissal area.
+        app.otherElements[AccessibilityIdentifiers.GroceryListView.dismissalArea].tap()
+
         XCTAssert(app.textFields["Banana"].exists)
 
         // Delete the item and wait until it fully disappears

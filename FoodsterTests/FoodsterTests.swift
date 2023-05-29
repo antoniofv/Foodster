@@ -1,14 +1,15 @@
 //
-//  iOS_RecyclingTests.swift
+//  FoodsterTests.swift
 //  FoodsterTests
 //
 //  Created by Antonio Fernandez Vega on 17/2/23.
 //
 
 import XCTest
-@testable import iOS_Recycling
+@testable import Foodtests
 
-final class iOS_RecyclingTests: XCTestCase {
+
+final class FoodsterTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
