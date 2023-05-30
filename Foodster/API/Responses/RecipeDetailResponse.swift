@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct RecipeDetailResponse: Decodable {
+public struct RecipeDetailResponse: Decodable {
 
     enum ResponseError: Error {
         case noRecipes
@@ -22,7 +22,7 @@ struct RecipeDetailResponse: Decodable {
     let recipe: Recipe
 
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Self.CodingKeys)
 
         let meals = try container.decode(Array<Recipe>.self, forKey: .meals)

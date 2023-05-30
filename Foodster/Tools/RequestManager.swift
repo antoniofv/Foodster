@@ -19,9 +19,23 @@ class RequestManager {
 
 extension RequestManager {
 
-    public func getRequest<T: Decodable>(url: URL) async throws -> T {
-        async let (data, _) = try session.data(from: url)
-        return try await JSONDecoder().decode(T.self, from: data)
+    public func request<T: Decodable>(_ request: any NetworkRequestProtocol) async throws -> T {
+        let urlRequest = buildURLRequest(from: request)
+        async let (data, _) = try session.data(for: urlRequest)
+        return try await request.responseDecoder(data) as! T
+    }
+
+}
+
+
+extension RequestManager {
+
+    private func buildURLRequest(from request: any NetworkRequestProtocol) -> URLRequest {
+        var urlRequest = URLRequest(url: request.url)
+        urlRequest.httpMethod = request.httpMethod.rawValue
+        urlRequest.httpBody = request.body
+        urlRequest.allHTTPHeaderFields = request.headers
+        return urlRequest
     }
 
 }

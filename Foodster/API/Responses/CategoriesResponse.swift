@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CategoriesResponse: Decodable {
+public struct CategoriesResponse: Decodable {
 
     let categories: [RecipeCategory]
 

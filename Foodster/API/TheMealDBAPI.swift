@@ -37,24 +37,24 @@ final class TheMealDBAPI: TheMealDBAPIProtocol {
 extension TheMealDBAPI {
 
     func getCategories() async throws -> [RecipeCategory] {
-        let response: CategoriesResponse = try await requestManager.getRequest(
-            url: CategoriesResource(baseUrl: baseUrl).url
+        let response: CategoriesResponse = try await requestManager.request(
+            CategoriesRequest(baseUrl: baseUrl)
         )
 
         return response.categories
     }
 
     func getRecipes(by category: RecipeCategory) async throws -> [Recipe] {
-        let response: RecipesResponse = try await requestManager.getRequest(
-            url: RecipesResource(baseUrl: baseUrl, categoryName: category.name).url
+        let response: RecipesResponse = try await requestManager.request(
+            RecipesRequest(baseUrl: baseUrl, categoryName: category.name)
         )
         
         return response.meals
     }
 
     func getRecipe(id: String) async throws -> Recipe {
-        let response: RecipeDetailResponse = try await requestManager.getRequest(
-            url: RecipeDetailResource(baseUrl: baseUrl, id: id).url
+        let response: RecipeDetailResponse = try await requestManager.request(
+            RecipeDetailsRequest(baseUrl: baseUrl, id: id)
         )
 
         return response.recipe
